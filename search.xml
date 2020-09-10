@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>我的爷爷</title>
+    <url>/2020/091016058.html</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>亲情</category>
+      </categories>
+      <tags>
+        <tag>-怀念 -回忆</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>解决大文件上传失败git命令失效问题</title>
-    <url>/2020/090916107.html</url>
-    <content><![CDATA[<h2 id="1-尝试删除视频"><a href="#1-尝试删除视频" class="headerlink" title="1.尝试删除视频"></a>1.尝试删除视频</h2><p>以我以前的经验删除文件夹原有视频即可，但是仍然报错无法上传；后来找到原因——git commit 命令bug。<br><img src="https://ztygcs.github.io/images/tech/2019/11/large_file.png" alt="avatar"><br>此图片为天涯共此时文章图片。</p>
+    <url>/2020/090926490.html</url>
+    <content><![CDATA[<h2 id="1-尝试删除视频"><a href="#1-尝试删除视频" class="headerlink" title="1.尝试删除视频"></a>1.尝试删除视频</h2><p>以我以前的经验删除文件夹原有视频即可，但是仍然报错无法上传；后来找到原因——git commit 命令bug。<br><img src="https://ztygcs.github.io/images/tech/2019/11/large_file.png" alt="此图片为天涯共此时文章图片"></p>
 <h2 id="2-尝试搜索错误"><a href="#2-尝试搜索错误" class="headerlink" title="2.尝试搜索错误"></a>2.尝试搜索错误</h2><p>上网看了天涯共此时<a href="https://ztygcs.github.io/">https://ztygcs.github.io/</a><br>该为博主对于该问题的解决方案。</p>
 <h3 id="2-1查找hexokinase根目录下-deploy-git文件"><a href="#2-1查找hexokinase根目录下-deploy-git文件" class="headerlink" title="2.1查找hexokinase根目录下.deploy_git文件"></a>2.1查找hexokinase根目录下.deploy_git文件</h3><p>运行一下命令,查找运行日志</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-2找到自己出错误前的提交命令commit"><a href="#2-2找到自己出错误前的提交命令commit" class="headerlink" title="2.2找到自己出错误前的提交命令commit"></a>2.2找到自己出错误前的提交命令commit</h3><p><img src="/medias/blogpic/commit.png" alt="avatar"><br>找到之后运行以下代码恢复提交命令之前。</p>
+<h3 id="2-2找到自己出错误前的提交命令commit"><a href="#2-2找到自己出错误前的提交命令commit" class="headerlink" title="2.2找到自己出错误前的提交命令commit"></a>2.2找到自己出错误前的提交命令commit</h3><p><img src="/medias/blogpic/commit.png" alt="img"><br>找到之后运行以下代码恢复提交命令之前。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git reset yourcommit</span><br></pre></td></tr></table></figure>
 <h3 id="2-3重新使用提交命令"><a href="#2-3重新使用提交命令" class="headerlink" title="2.3重新使用提交命令"></a>2.3重新使用提交命令</h3><p>提示，在再次使用$ source up.sh 命令时，请删除原有的大文件夹；否则可能再次出现此问题。<br>成功解决问题，感谢天涯共此时大佬！</p>
 ]]></content>
