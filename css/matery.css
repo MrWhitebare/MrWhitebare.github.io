@@ -7,6 +7,15 @@
 	header .brand-logo .logo-img{
 		display: none;
 	}
+	header .brand-logo .logo-span {
+        font-size: 1.5rem !important;
+    }
+	.bg-cover .title {
+    font-size: 1.5rem !important;
+    line-height: 1.85em;
+    margin-bottom: 20px;
+    position: relative;
+}
 }
 
 /*中等屏幕下(平板类)的样式*/
@@ -1726,7 +1735,7 @@ thead {
 }
 
 .my-skills .other-skills {
-    margin-top: 2rem;
+    margin-top: 2rem; 
 }
 
 .other-skills .sub-title {
