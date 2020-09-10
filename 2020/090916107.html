@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contact, MapInfo Blog">
+    <meta name="keywords" content="解决大文件上传失败git命令失效问题, MapInfo Blog">
     <meta name="description" content="我从小到大没什么梦想，一直在路上不问远方，只是衷心希望自己成为一个很厉害的人，你问我什么算厉害，大概就是能有朝一日，保护好爱人，对得起朋友，赡养好家人吧。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>contact | MapInfo Blog</title>
+    <title>解决大文件上传失败git命令失效问题 | MapInfo Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/awesome/css/all.css">
@@ -28,10 +28,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/jquery/jquery.min.js"></script>
-
+	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 <meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="MapInfo Blog" type="application/atom+xml">
 </head>
-
 
 <body>
     <header class="navbar-fixed">
@@ -304,17 +303,30 @@
     </nav>
 
 </header>
-
+	
     
+<script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/featureimages/16.jpg')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">contact</h1>
+                    <h1 class="description center-align post-title">解决大文件上传失败git命令失效问题</h1>
                 </div>
             </div>
         </div>
@@ -324,105 +336,10 @@
 
 
 
-<main class="post-container content">
+<main class="container content">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        width: 345px;
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content {
-        height: calc(100vh - 250px);
-        overflow: auto;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-
-        position: absolute;
-        right: 23.5vw;
-        display: block;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -431,14 +348,31 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/contact/">
-                                <span class="chip bg-color">contact</span>
+                            <a href="/tags/day-error-log/">
+                                <span class="chip bg-color">day_error_log</span>
+                            </a>
+                        
+                            <a href="/tags/hexo/">
+                                <span class="chip bg-color">hexo</span>
+                            </a>
+                        
+                            <a href="/tags/matery/">
+                                <span class="chip bg-color">matery</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E7%BB%B4%E6%8A%A4/" class="post-category">
+                                日常维护
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -447,21 +381,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-06
+                    2020-09-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-09-06
+                    2020-09-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    215
                 </div>
                 
 
@@ -483,7 +417,14 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="1-尝试删除视频"><a href="#1-尝试删除视频" class="headerlink" title="1.尝试删除视频"></a>1.尝试删除视频</h2><p>以我以前的经验删除文件夹原有视频即可，但是仍然报错无法上传；后来找到原因——git commit 命令bug。<br><img src="https://ztygcs.github.io/images/tech/2019/11/large_file.png" alt="avatar"><br>此图片为天涯共此时文章图片。</p>
+<h2 id="2-尝试搜索错误"><a href="#2-尝试搜索错误" class="headerlink" title="2.尝试搜索错误"></a>2.尝试搜索错误</h2><p>上网看了天涯共此时<a target="_blank" rel="noopener" href="https://ztygcs.github.io/">https://ztygcs.github.io/</a><br>该为博主对于该问题的解决方案。</p>
+<h3 id="2-1查找hexokinase根目录下-deploy-git文件"><a href="#2-1查找hexokinase根目录下-deploy-git文件" class="headerlink" title="2.1查找hexokinase根目录下.deploy_git文件"></a>2.1查找hexokinase根目录下.deploy_git文件</h3><p>运行一下命令,查找运行日志</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2找到自己出错误前的提交命令commit"><a href="#2-2找到自己出错误前的提交命令commit" class="headerlink" title="2.2找到自己出错误前的提交命令commit"></a>2.2找到自己出错误前的提交命令commit</h3><p><img src="/medias/blogpic/commit.png" alt="avatar"><br>找到之后运行以下代码恢复提交命令之前。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset yourcommit</span><br></pre></td></tr></table></figure>
+<h3 id="2-3重新使用提交命令"><a href="#2-3重新使用提交命令" class="headerlink" title="2.3重新使用提交命令"></a>2.3重新使用提交命令</h3><p>提示，在再次使用$ source up.sh 命令时，请删除原有的大文件夹；否则可能再次出现此问题。<br>成功解决问题，感谢天涯共此时大佬！</p>
+
             </div>
             <hr/>
 
@@ -508,7 +449,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://MrWhitebare.github.io/2020/090627089.html">https://MrWhitebare.github.io/2020/090627089.html</a>
+                    <a href="https://MrWhitebare.github.io/2020/090916107.html">https://MrWhitebare.github.io/2020/090916107.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,8 +487,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/contact/">
-                                    <span class="chip bg-color">contact</span>
+                                <a href="/tags/day-error-log/">
+                                    <span class="chip bg-color">day_error_log</span>
+                                </a>
+                            
+                                <a href="/tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
+                                </a>
+                            
+                                <a href="/tags/matery/">
+                                    <span class="chip bg-color">matery</span>
                                 </a>
                             
                         </div>
@@ -718,7 +667,7 @@
         repo: 'MrWhitebare.github.io',
         owner: 'MrWhitebare',
         admin: "MrWhitebare",
-        id: '2020-09-06T11-35-32',
+        id: '2020-09-09T22-40-02',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -740,9 +689,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://mrwhitebare.github.io/2020/090627089.html';
-        this.page.identifier = '/2020/090627089.html';
-        this.page.title = 'contact';
+        this.page.url = 'https://mrwhitebare.github.io/2020/090916107.html';
+        this.page.identifier = '/2020/090916107.html';
+        this.page.title = '解决大文件上传失败git命令失效问题';
     };
     let disqus_shortname = '';
 
@@ -1036,29 +985,33 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/090627089.html">
+                <a href="/2020/090916107.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="解决大文件上传失败git命令失效问题">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">解决大文件上传失败git命令失效问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            本来想上传一个大仙打传奇的视频，但是git限制单个文件超过100M；致使我上传命令一直发生错误，以下来看一下解决方式。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-09
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Mr Heisenberg
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E7%BB%B4%E6%8A%A4/" class="post-category">
+                                    日常维护
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1067,8 +1020,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/contact/">
-                        <span class="chip bg-color">contact</span>
+                    <a href="/tags/day-error-log/">
+                        <span class="chip bg-color">day_error_log</span>
+                    </a>
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/matery/">
+                        <span class="chip bg-color">matery</span>
                     </a>
                     
                 </div>
@@ -1079,49 +1040,54 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/090516107.html">
+                <a href="/2020/090916107.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="解决大文件上传失败git命令失效问题">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">解决大文件上传失败git命令失效问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，则程序会自动截取文章的部分内容作为摘要
+                            本来想上传一个大仙打传奇的视频，但是git限制单个文件超过100M；致使我上传命令一直发生错误，以下来看一下解决方式。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    工具
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E7%BB%B4%E6%8A%A4/" class="post-category">
+                                    日常维护
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/blog/">
-                        <span class="chip bg-color">blog</span>
+                    <a href="/tags/day-error-log/">
+                        <span class="chip bg-color">day_error_log</span>
                     </a>
                     
                     <a href="/tags/hexo/">
                         <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/matery/">
+                        <span class="chip bg-color">matery</span>
                     </a>
                     
                 </div>
@@ -1161,107 +1127,39 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </style>
 
 
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
-
     
 
 </main>
 
 
 
-
+	<div id="weather-v2-plugin-simple"></div>
+<script>
+WIDGET = {
+  CONFIG: {
+    "modules": "01234",
+    "background": 5,
+    "tmpColor": "FFFFFF",
+    "tmpSize": 16,
+    "cityColor": "FFFFFF",
+    "citySize": 16,
+    "aqiSize": 16,
+    "weatherIconSize": 24,
+    "alertIconSize": 18,
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "zh",
+    "borderRadius": 0,
+    "fixed": "true",
+    "vertical": "middle",
+    "horizontal": "center",
+    "left": "68",
+    "top": "60",
+    "key": "uq5WYrbS8x"
+  }
+}
+</script>
+<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
     <footer class="page-footer bg-color">
     
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/aplayer/APlayer.min.css">
@@ -1328,7 +1226,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">75</span>&nbsp;字
+                class="white-color">215</span>&nbsp;字
             
             
             
@@ -1463,7 +1361,6 @@ $(function () {
     </a>
 </div>
 
-
     <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/materialize/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/masonry/masonry.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/aos/aos.js"></script>
@@ -1495,7 +1392,6 @@ $(function () {
     
     <script async src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/others/busuanzi.pure.mini.js"></script>
     
-
     
 
     

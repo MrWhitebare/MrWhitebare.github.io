@@ -28,10 +28,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/jquery/jquery.min.js"></script>
-
+	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 <meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="MapInfo Blog" type="application/atom+xml">
 </head>
-
 
 <body>
     <header class="navbar-fixed">
@@ -304,7 +303,7 @@
     </nav>
 
 </header>
-
+	
     <style type="text/css">
     /* don't remove. */
     .about-cover {
@@ -336,7 +335,33 @@
     </script>
 
 
-
+	<div id="weather-v2-plugin-simple"></div>
+<script>
+WIDGET = {
+  CONFIG: {
+    "modules": "01234",
+    "background": 5,
+    "tmpColor": "FFFFFF",
+    "tmpSize": 16,
+    "cityColor": "FFFFFF",
+    "citySize": 16,
+    "aqiSize": 16,
+    "weatherIconSize": 24,
+    "alertIconSize": 18,
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "zh",
+    "borderRadius": 0,
+    "fixed": "true",
+    "vertical": "middle",
+    "horizontal": "center",
+    "left": "68",
+    "top": "60",
+    "key": "uq5WYrbS8x"
+  }
+}
+</script>
+<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
     <footer class="page-footer bg-color">
     
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/aplayer/APlayer.min.css">
@@ -403,7 +428,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">75</span>&nbsp;字
+                class="white-color">215</span>&nbsp;字
             
             
             
@@ -538,7 +563,6 @@ $(function () {
     </a>
 </div>
 
-
     <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/materialize/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/masonry/masonry.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/aos/aos.js"></script>
@@ -570,7 +594,6 @@ $(function () {
     
     <script async src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/others/busuanzi.pure.mini.js"></script>
     
-
     
 
     
