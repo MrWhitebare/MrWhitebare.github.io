@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我的爷爷, HTML,CSS,JavaScript,JQuery,C#,GIS等">
+    <meta name="keywords" content="使用arcpy批量删除shp数据字段和添加字段, HTML,CSS,JavaScript,JQuery,C#,GIS等">
     <meta name="description" content="我从小到大没什么梦想，一直在路上不问远方，只是衷心希望自己成为一个很厉害的人，你问我什么算厉害，大概就是能有朝一日，保护好爱人，对得起朋友，赡养好家人吧。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>我的爷爷 | MapInfo Blog</title>
+    <title>使用arcpy批量删除shp数据字段和添加字段 | MapInfo Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -478,7 +478,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '89db871a4741a6c29265ead0da76c73241fd10335e2b7213d87e68ef3ecf1d75';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -491,12 +491,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">我的爷爷</h1>
+                    <h1 class="description center-align post-title">使用arcpy批量删除shp数据字段和添加字段</h1>
                 </div>
             </div>
         </div>
@@ -506,10 +506,105 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -518,16 +613,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%80%80%E5%BF%B5/">
-                                <span class="chip bg-color">怀念</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
-                            <a href="/tags/%E5%9B%9E%E5%BF%86/">
-                                <span class="chip bg-color">回忆</span>
+                            <a href="/tags/ArcGIS/">
+                                <span class="chip bg-color">ArcGIS</span>
                             </a>
                         
-                            <a href="/tags/%E5%8F%8D%E6%80%9D/">
-                                <span class="chip bg-color">反思</span>
+                            <a href="/tags/ArcPY/">
+                                <span class="chip bg-color">ArcPY</span>
                             </a>
                         
                     </div>
@@ -538,8 +633,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E4%BA%B2%E6%83%85/" class="post-category">
-                                亲情
+                            <a href="/categories/GIS/" class="post-category">
+                                GIS
                             </a>
                         
                     </div>
@@ -551,7 +646,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-10
+                    2020-09-12
                 </div>
                 
 
@@ -565,14 +660,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    10 分
                 </div>
                 
 
@@ -587,7 +682,165 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="ArcPy">ArcPy</h2>
+<h3 id="1-1-ArcPy介绍">1.1 ArcPy介绍</h3>
+<p>ArcPy 是一个以成功的 arcgisscripting 模块为基础并继承了 arcgisscripting 功能进而构建而成的站点包。目的是为以实用高效的方式通过 Python 执行地理数据分析、数据转换、数据管理和地图自动化创建基础。</p>
+<p>该包提供了丰富纯正的 Python 体验，具有代码自动完成功能（输入关键字和点即可获得该关键字所支持的属性和方法的弹出列表；从中选择一个属性或方法即可将其插入），并针对每个函数、模块和类提供了参考文档。</p>
+<p>在 Python 中使用 ArcPy 的另一个主要原因是，Python 是一种通用的编程语言。Python 是一种支持动态输入的解释型语言，适用于交互式操作以及为称为脚本的一次性程序快速制作原型，同时其具有编写大型应用程序的强大功能。用 ArcPy 编写的 ArcGIS 应用程序的优势在于，可以使用由来自多个不同领域的 GIS 专业人员和程序员组成的众多 Python 小群体开发的附加模块。</p>
+<p><a target="_blank" rel="noopener" href="https://desktop.arcgis.com/zh-cn/arcmap/10.3/analyze/arcpy/what-is-arcpy-.htm">推荐学习资料</a></p>
+<h3 id="1-2-ArcPy基本词汇">1.2 ArcPy基本词汇</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">术语</th>
+<th style="text-align:left">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Python</td>
+<td style="text-align:left">Python 是由 Guido van Rossum 在上世纪八十年代末构想并于 1991 年推出的一种开源编程语言。Python 得到了不断壮大的多元化用户群体的支持，具备简洁易读、语法清晰、支持动态定型等特点，并且具有大量标准库和第三方库。</td>
+</tr>
+<tr>
+<td style="text-align:center">ArcPy</td>
+<td style="text-align:left">ArcPy（通常称为 ArcPy 站点包）为用户提供了使用 Python 语言操作所有地理处理工具（包括扩展模块）的接口，并提供了多种有用的函数和类，以用于处理和查询 GIS 数据。使用 Python 和 ArcPy，可以开发出大量的用于处理地理数据的实用程序。</td>
+</tr>
+<tr>
+<td style="text-align:center">ArcPy 模块</td>
+<td style="text-align:left">模块为通常包含函数和类的 Python 文件。ArcPy 由一系列模块支持，包括<a target="_blank" rel="noopener" href="https://pro.arcgis.com/zh-cn/pro-app/arcpy/data-access/what-is-the-data-access-module-.htm">数据访问模块</a> (arcpy.da)、<a target="_blank" rel="noopener" href="https://pro.arcgis.com/zh-cn/pro-app/arcpy/mapping/introduction-to-arcpy-mp.htm">制图模块</a> (<a target="_blank" rel="noopener" href="http://arcpy.mp">arcpy.mp</a>)、<a target="_blank" rel="noopener" href="https://pro.arcgis.com/zh-cn/pro-app/arcpy/spatial-analyst/what-is-the-spatial-analyst-module.htm">ArcGIS Spatial Analyst extension 模块</a> (<a target="_blank" rel="noopener" href="http://arcpy.sa">arcpy.sa</a>)、ArcGIS Image Analyst extension 模块以及 <a target="_blank" rel="noopener" href="https://pro.arcgis.com/zh-cn/pro-app/arcpy/network-analyst/what-is-network-analyst-module.htm">ArcGIS Network Analyst extension 模块</a> (<a target="_blank" rel="noopener" href="http://arcpy.na">arcpy.na</a>)。</td>
+</tr>
+<tr>
+<td style="text-align:center">ArcPy 类</td>
+<td style="text-align:left">类的作用类似于建筑设计蓝图。蓝图为如何创建事物提供了一个框架。类可用于创建对象，即通常所说的实例。ArcPy 类，如 SpatialReference 和 Extent 类，通常用作地理处理工具参数设置的快捷方式，否则的话，这些参数会使用更加复杂的字符串。</td>
+</tr>
+<tr>
+<td style="text-align:center">ArcPy 函数</td>
+<td style="text-align:left">函数是用于执行某项特定任务并能够纳入更大的程序的已定义功能。在 ArcPy 中，所有地理处理工具均以函数形式提供，但并非所有函数都是地理处理工具。除工具之外，ArcPy 还提供多种函数来更好地支持 Python 地理处理工作流。函数（通常称为方法）可用于列出某些数据集、检索数据集的属性、在将表添加到地理数据库之前验证表名称，或执行其他许多有用的脚本任务。</td>
+</tr>
+<tr>
+<td style="text-align:center">独立 Python 脚本</td>
+<td style="text-align:left">独立 Python 脚本是一种 .py 文件，可通过两种方式执行：通过操作系统提示符，或 Python 集成开发环境 (IDE)。</td>
+</tr>
+<tr>
+<td style="text-align:center">Python 脚本工具</td>
+<td style="text-align:left">Python 脚本工具是已添加到地理处理工具箱的 Python 脚本。添加为脚本工具后，便可以像使用其他地理处理工具一样使用此脚本工具 - 可以从工具对话框打开和执行、可以在 Python 窗口和 ModelBuilder 中使用，也可以从其他脚本和脚本工具中调用。</td>
+</tr>
+<tr>
+<td style="text-align:center">Python 窗口</td>
+<td style="text-align:left">通过 <strong>Python</strong> 窗口，用户可以快捷地在 ArcGIS 内部使用 Python，从而以交互方式运行地理处理工具和功能以及充分利用其他 Python 模块和库。此窗口还为您学习 Python 提供了一个途径。<strong>Python</strong> 窗口可用于执行单行 Python 代码，并会将由此生成的消息输出到窗口。借助此窗口，您可以对语法进行试验和处理短代码，并可以在大型脚本范围之外对您的想法进行检验。</td>
+</tr>
+<tr>
+<td style="text-align:center">Python 工具箱</td>
+<td style="text-align:left">Python 工具箱是完全使用 Python 语言创建的地理处理工具箱。Python 工具箱及其所包含工具的外观、操作和运行方式与任何以其他方式创建的工具箱和工具类似。Python 工具箱是一个具有 .pyt 扩展名的 Python 文件，用于定义工具箱以及一个或多个工具。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ArcGIS介绍及代码分析">ArcGIS介绍及代码分析</h2>
+<h3 id="2-1-ArcGIS介绍">2.1 ArcGIS介绍</h3>
+<p>ArcGIS产品线为用户提供一个可伸缩的，全面的GIS平台。ArcObjects包含了许多的可编程组件，从细粒度的对象（例如单个的几何对象）到粗粒度的对象（例如与现有ArcMap文档交互的地图对象）涉及面极广，这些对象为开发者集成了全面的GIS功能。</p>
+<p><a target="_blank" rel="noopener" href="https://www.esri.com/zh-cn/arcgis/about-arcgis/overview">ArcGIS官网</a></p>
+<h3 id="2-2-主要涉及工具与方法">2.2 主要涉及工具与方法</h3>
+<p>本程序主要使用如下工具</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">工具名称</th>
+<th style="text-align:center">方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">DeleteFileds【删除字段】</td>
+<td style="text-align:center">arcpy.DeleteField_management(input_data,delete_fields)</td>
+</tr>
+<tr>
+<td style="text-align:left">AddFileds【添加字段】</td>
+<td style="text-align:center">arcpy.AddField_management(input_data,field_Name,fields_Type,field_Length)方法介绍：[‘输入数据’,‘字段名称’,‘字段类型’,‘字段长度’]以上为TEXT字段输入形式。arcpy.AddField_management(input_data,field_Name,fields_Type,field_Precision,field_Scale)以上为”FLOAT“或”DOUBLE“输入形式，新的参数表示 [数据精度,小数点后位数]</td>
+</tr>
+<tr>
+<td style="text-align:left">DefineProjection【定义投影】</td>
+<td style="text-align:center">arcpy.DefineProjection_management(in_data,project)project参数为投影坐标系统</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-3-设计思路">2.3 设计思路</h3>
+<p>首先调用制图模块arcpy.mapping读取当前地图文档，然后将当前地图文档的Layers图层转化为Python List；我们要筛选不符合要求的字段，及要求建立的字段创建列表，通过循环分别调用工具即可实现批量生成标准字段的工作任务。</p>
+<h3 id="2-4-代码展示">2.4 代码展示</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">#生成标准国标字段 Version1.0 CopyRight by Mr Heisenberg
+import arcpy
+#打开地图文档
+mymxd &#x3D;arcpy.mapping.MapDocument(&quot;current&quot;)
+ary &#x3D;arcpy.mapping.ListLayers(mymxd)
+&#39;&#39;&#39;
+坐标系统解析
+地理坐标系统：CGCS2000国家质心坐标系统
+椭球体参数：
+长半轴a：6378137.0，扁率α：1&#x2F;298.257222101
+投影坐标系统：Gauss_Kruger高斯克里格3°带投影坐标
+中央经线：117°
+起始纬线：0°
+单位：m
+&#39;&#39;&#39;
+cgcs2000_39&#x3D;&quot;PROJCS[&#39;CGCS2000_3_Degree_GK_Zone_39&#39;,\
+GEOGCS[&#39;GCS_China_Geodetic_Coordinate_System_2000&#39;,\
+DATUM[&#39;D_China_2000&#39;,SPHEROID[&#39;CGCS2000&#39;,6378137.0,298.257222101]],\
+PRIMEM[&#39;Greenwich&#39;,0.0],UNIT[&#39;Degree&#39;,0.0174532925199433]],\
+PROJECTION[&#39;Gauss_Kruger&#39;],PARAMETER[&#39;False_Easting&#39;,39500000.0],\
+PARAMETER[&#39;False_Northing&#39;,0.0],PARAMETER[&#39;Central_Meridian&#39;,117.0],\
+PARAMETER[&#39;Scale_Factor&#39;,1.0],PARAMETER[&#39;Latitude_Of_Origin&#39;,0.0],UNIT[&#39;Meter&#39;,1.0]]&quot;
+#删除字段列表
+delete_list&#x3D;[&quot;YBZDDM&quot;,&quot;QSXZ&quot;,&quot;ZDSYQLX&quot;,&quot;PZMJ&quot;,&quot;TDJB&quot;,&quot;SBDJ&quot;,&quot;QDJG&quot;,\
+&quot;SFGY&quot;,&quot;BLC&quot;,&quot;PZYT&quot;,&quot;SJYT&quot;,&quot;QLSLQK&quot;,&quot;GMJJHYFLDM&quot;,&quot;JZZDMJ&quot;,&quot;JZZMJ&quot;,&quot;SYQSRQ&quot;,\
+&quot;SYQX&quot;,&quot;SYZZRQ&quot;,&quot;QTSM&quot;,&quot;QLXZ&quot;]
+#添加字段列表属性
+fields&#x3D;[[&quot;ZL&quot;,&quot;TEXT&quot;,200],[&quot;ZDMJ&quot;,&quot;FLOAT&quot;,15,4],[&quot;MJDW&quot;,&quot;TEXT&quot;,2],[&quot;DJ&quot;,&quot;TEXT&quot;,2],\
+		[&quot;JG&quot;,&quot;FLOAT&quot;,15,4],[&quot;YT&quot;,&quot;TEXT&quot;,4],[&quot;ZDT&quot;,&quot;TEXT&quot;,200],[&quot;QLSDFS&quot;,&quot;TEXT&quot;,2],\
+        [&quot;RJL&quot;,&quot;TEXT&quot;,20],[&quot;JZXG&quot;,&quot;FLOAT&quot;,5,2],[&quot;ZDSZD&quot;,&quot;TEXT&quot;,200],[&quot;ZDSZN&quot;,&quot;TEXT&quot;,200],\
+		[&quot;ZDSZX&quot;,&quot;TEXT&quot;,200],[&quot;ZDSZB&quot;,&quot;TEXT&quot;,200],[&quot;DAH&quot;,&quot;TEXT&quot;,254],[&quot;BZ&quot;,&quot;TEXT&quot;,254],\
+		[&quot;TFH&quot;,&quot;TEXT&quot;,50],[&quot;DJH&quot;,&quot;TEXT&quot;,20],[&quot;ZT&quot;,&quot;TEXT&quot;,2],[&quot;YTMC&quot;,&quot;TEXT&quot;,254],\
+		[&quot;QXDM&quot;,&quot;TEXT&quot;,6],[&quot;QLXZ&quot;,&quot;TEXT&quot;,4]] 
+#给特殊字段赋值
+special_fields&#x3D;[&quot;ZDBZ&quot;,&quot;ZDDZ&quot;,&quot;ZDNZ&quot;,&quot;ZDXZ&quot;,&quot;SZTFH&quot;,&quot;JZRJL&quot;,&quot;SCMJ&quot;,&quot;TDZL&quot;]
+#固定字段
+fixed_fields&#x3D;[[&quot;QLLX&quot;,&quot;5&quot;],[&quot;QLXZ&quot;,&quot;200&quot;],[&quot;QLSDFS&quot;,&quot;2&quot;],[&quot;MJDW&quot;,&quot;1&quot;],[&quot;YT&quot;,&quot;072&quot;],[&quot;ZT&quot;,&quot;1&quot;],\
+[&quot;YTMC&quot;,&quot;农村宅基地&quot;],[&quot;QXDM&quot;,&quot;131124&quot;]]
+#新生成字段
+New_fields&#x3D;[&quot;ZDSZB&quot;,&quot;ZDSZD&quot;,&quot;ZDSZN&quot;,&quot;ZDSZX&quot;,&quot;TFH&quot;,&quot;RJL&quot;,&quot;ZDMJ&quot;,&quot;ZL&quot;]
+#生成删除集
+delete_txt&#x3D;&quot;&quot;
+for delete in delete_list:
+	delete_txt+&#x3D;delete+&quot;;&quot;
+for lyr in ary:
+	in_table&#x3D;lyr.dataSource
+	if in_table.find(&quot;.shp&quot;)&gt;0:
+		arcpy.DeleteField_management(in_table,delete_txt)
+		print(&quot;多余字段删除完成！&quot;)
+		for count in fields:
+			if count[1]&#x3D;&#x3D;&quot;TEXT&quot;:
+				print(&quot;名称:&#123;0&#125;———— 类形:&#123;1&#125;———— 长度:&#123;2&#125;&quot;.format(count[0],count[1],count[2]))
+arcpy.AddField_management(in_table,count[0],count[1],field_length&#x3D;count[2])
+			else:
+				print(&quot;名称:&#123;0&#125;———— 类形:&#123;1&#125;———— 精度:&#123;2&#125;———— 小数点位数：&#123;3&#125;&quot;.format(count[0],count[1],count[2],count[3]))
+				arcpy.AddField_management(in_table,count[0],count[1],count[2],count[3])
+		print(&quot;创建字段完成！&quot;)
+		for field in fixed_fields:
+			field_&#x3D;&quot;\&quot;&quot;+field[1]+&quot;\&quot;&quot;
+			arcpy.CalculateField_management(in_table,field[0],field_, &quot;VB&quot;)
+		print(&quot;赋予字段固定值完成！&quot;)
+		for i in range(len(special_fields)):
+			field&#x3D;&quot;[&quot;+special_fields[i]+&quot;]&quot;
+			arcpy.CalculateField_management(in_table,New_fields[i],field,&quot;VB&quot;)
+			arcpy.DeleteField_management(in_table,special_fields[i])
+		print(&quot;数据交换完成！&quot;)
+		arcpy.DefineProjection_management(in_table,cgcs2000_39) 
+		print(&quot;定义国家2000坐标系统完成！&quot;)
+	else:
+		next
+del mymxd
+arcpy.RefreshActiveView()
+print(&quot;------标准字段完成------&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>欢迎大家积极评论。</p>
+
             </div>
             <hr/>
 
@@ -612,7 +865,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://MrWhitebare.github.io/2020/091016058.html">https://MrWhitebare.github.io/2020/091016058.html</a>
+                    <a href="https://MrWhitebare.github.io/2020/0912976.html">https://MrWhitebare.github.io/2020/0912976.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -650,16 +903,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%80%80%E5%BF%B5/">
-                                    <span class="chip bg-color">怀念</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
-                                <a href="/tags/%E5%9B%9E%E5%BF%86/">
-                                    <span class="chip bg-color">回忆</span>
+                                <a href="/tags/ArcGIS/">
+                                    <span class="chip bg-color">ArcGIS</span>
                                 </a>
                             
-                                <a href="/tags/%E5%8F%8D%E6%80%9D/">
-                                    <span class="chip bg-color">反思</span>
+                                <a href="/tags/ArcPY/">
+                                    <span class="chip bg-color">ArcPY</span>
                                 </a>
                             
                         </div>
@@ -830,7 +1083,7 @@
         repo: 'MrWhitebare.github.io',
         owner: 'MrWhitebare',
         admin: "MrWhitebare",
-        id: '2020-09-10T00-00-00',
+        id: '2020-09-12T00-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -852,9 +1105,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://mrwhitebare.github.io/2020/091016058.html';
-        this.page.identifier = '/2020/091016058.html';
-        this.page.title = '我的爷爷';
+        this.page.url = 'https://mrwhitebare.github.io/2020/0912976.html';
+        this.page.identifier = '/2020/0912976.html';
+        this.page.title = '使用arcpy批量删除shp数据字段和添加字段';
     };
     let disqus_shortname = '';
 
@@ -1147,6 +1400,63 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2020/091331943.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="对于使用hexo-prism-plugin插件代码无法渲染问题的解决方法">
+                        
+                        <span class="card-title">对于使用hexo-prism-plugin插件代码无法渲染问题的解决方法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            按照网上教程成功的安装了hexo-prism-plugin插件但是代码部分却无法渲染，查找很多博客无法解决问题；最后简书上岑吾的文章给我提供了解决问题的思路————https://www.jianshu.com/p/f395d92a1110。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E7%BB%B4%E6%8A%A4/" class="post-category">
+                                    日常维护
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/prims-plugin/">
+                        <span class="chip bg-color">prims-plugin</span>
+                    </a>
+                    
+                    <a href="/tags/matery/">
+                        <span class="chip bg-color">matery</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2020/091126490.html">
                     <div class="card-image">
                         
@@ -1163,9 +1473,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1191,64 +1501,6 @@
                     
                     <a href="/tags/day-error-log/">
                         <span class="chip bg-color">day_error_log</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/091016058.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="我的爷爷">
-                        
-                        <span class="card-title">我的爷爷</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-10
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E4%BA%B2%E6%83%85/" class="post-category">
-                                    亲情
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%80%80%E5%BF%B5/">
-                        <span class="chip bg-color">怀念</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9B%9E%E5%BF%86/">
-                        <span class="chip bg-color">回忆</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8F%8D%E6%80%9D/">
-                        <span class="chip bg-color">反思</span>
                     </a>
                     
                 </div>
@@ -1283,6 +1535,100 @@
 
 <!-- 代码块折行 -->
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 

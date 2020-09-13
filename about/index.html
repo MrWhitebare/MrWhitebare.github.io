@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="关于我, MapInfo Blog">
+    <meta name="keywords" content="关于我, HTML,CSS,JavaScript,JQuery,C#,GIS等">
     <meta name="description" content="我从小到大没什么梦想，一直在路上不问远方，只是衷心希望自己成为一个很厉害的人，你问我什么算厉害，大概就是能有朝一日，保护好爱人，对得起朋友，赡养好家人吧。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -29,10 +29,152 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-<meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="MapInfo Blog" type="application/atom+xml">
-</head>
+	<link rel="stylesheet" href="/js/prism/prism.css">
+<style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
 
-<body>
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script><meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="MapInfo Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+
+ <div id="loading-container">
+     <p class="loading-text">正在加载中. . .Loading </p> 
+     <div class="loading-image">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div> 
+         <div></div>
+     </div>
+ </div><body>
+	<!-- 个性标题 --> 
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -106,12 +248,26 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/friends" class="waves-effect waves-light">
+    <a href="" class="waves-effect waves-light">
+
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
       <span>友情链接</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/friends">
+          
+          <i class="fas fa-atlas" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>GIS</span>
+        </a>
+      </li>
+      
+    </ul>
     
   </li>
   
@@ -209,12 +365,26 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/friends" class="waves-effect waves-light">
+		<a href="javascript:;">
 			
-			    <i class="fa-fw fas fa-address-book"></i>
+				<i class="fa-fw fas fa-address-book"></i>
 			
 			友情链接
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/friends " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-atlas" style="position: absolute;left:50px" ></i>
+			      
+		          <span>GIS</span>
+                  </a>
+                </li>
+              
+            </ul>
           
         </li>
         
@@ -354,29 +524,28 @@
 </div>
 
 <main class="content">
-
     <div id="aboutme" class="container about-container">
         <div class="card">
-            <div class="card-content">
+            <div class="card-content">				
                 <div class="row">
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">2</a></span>
+    <span class="count"><a href="/">4</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">2</a></span>
+    <span class="count"><a href="/categories">3</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">6</a></span>
+    <span class="count"><a href="/tags">10</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -392,21 +561,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">2</a></span>
+    <span class="count"><a href="/">4</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">2</a></span>
+    <span class="count"><a href="/categories">3</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">6</a></span>
+    <span class="count"><a href="/tags">10</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -550,7 +719,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,2],
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,4],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -592,7 +761,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"亲情","value":1},{"name":"日常维护","value":1}],
+                data: [{"name":"亲情","value":1},{"name":"日常维护","value":2},{"name":"GIS","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -616,7 +785,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["怀念","回忆","反思","day_error_log","hexo","matery"]
+                data: ["hexo","matery","怀念","回忆","反思","prims-plugin","Python","ArcGIS","ArcPY","day_error_log"]
             }
         ],
         yAxis: [
@@ -629,7 +798,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [1,1,1,1,1,1],
+                data: [2,2,1,1,1,1,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -685,12 +854,25 @@
             <div class="info center-align">
                 <a href="https://github.com/MrWhitebare/Python-Geography-spatial-analysis" class="icon"
                    style="background: linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)" target="_blank">
-                    <i class="fas fa-file-alt"></i>
+                    <i class="fab fa-python"></i>
                 </a>
                 <div class="info-title">
-                    <a href="https://github.com/MrWhitebare/Python-Geography-spatial-analysis" target="_blank">python</a>
+                    <a href="https://github.com/MrWhitebare/Python-Geography-spatial-analysis" target="_blank">Python</a>
                 </div>
                 <div class="info-desc">这是我对《python地理空间分析》的实践代码,以及数据文件。</div>
+            </div>
+        </div>
+        
+        <div class="col s12 m6 l4" data-aos="fade-up">
+            <div class="info center-align">
+                <a href="https://github.com/MrWhitebare/JavaScript-Code" class="icon"
+                   style="background: linear-gradient(to bottom right, #30B6F6 0%, #1E66E5 100%)" target="_blank">
+                    <i class="fab fa-js"></i>
+                </a>
+                <div class="info-title">
+                    <a href="https://github.com/MrWhitebare/JavaScript-Code" target="_blank">JavaScript</a>
+                </div>
+                <div class="info-desc">上传一些js的代码和有趣的html页面</div>
             </div>
         </div>
         
@@ -815,20 +997,40 @@
             
             
             
-            <a href="/tags/day-error-log/">
-                <span class="chip center-align waves-effect waves-light chip-default">day_error_log</span>
-            </a>
-            
-            
-            
             <a href="/tags/hexo/">
                 <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
             </a>
             
             
             
+            <a href="/tags/prims-plugin/">
+                <span class="chip center-align waves-effect waves-light chip-default">prims-plugin</span>
+            </a>
+            
+            
+            
             <a href="/tags/matery/">
                 <span class="chip center-align waves-effect waves-light chip-default">matery</span>
+            </a>
+            
+            
+            
+            
+            
+            <a href="/tags/ArcGIS/">
+                <span class="chip center-align waves-effect waves-light chip-default">ArcGIS</span>
+            </a>
+            
+            
+            
+            <a href="/tags/ArcPY/">
+                <span class="chip center-align waves-effect waves-light chip-default">ArcPY</span>
+            </a>
+            
+            
+            
+            <a href="/tags/day-error-log/">
+                <span class="chip center-align waves-effect waves-light chip-default">day_error_log</span>
             </a>
             
             
@@ -916,7 +1118,8 @@ WIDGET = {
 }
 </script>
 <script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
-    <footer class="page-footer bg-color">
+    <script src="/js/prism/prism.js" async></script>
+<footer class="page-footer bg-color">
     
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
@@ -982,7 +1185,7 @@ WIDGET = {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">202</span>&nbsp;字
+                class="white-color">3.2k</span>&nbsp;字
             
             
             
@@ -1171,6 +1374,18 @@ $(function () {
 	<!-- 雪花特效 --> 
 	 
 	<script type="text/javascript" src="/libs/others/snow.js"></script> 
+	<script src="/js/FunnyTitle.js"></script>
+	<script src="/./js/click_show_text.js"></script>
+	<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+	<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+	<script type="text/javascript" src="/js/fireworks.js"></script>
+	<script type="text/javascript">
+	//只在桌面版网页启用特效
+	var windowWidth = $(window).width();
+	if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+	}
+	</script>
 	
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"log":false});</script></body>
 
