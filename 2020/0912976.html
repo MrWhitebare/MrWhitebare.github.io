@@ -17,17 +17,17 @@
 
 
     <title>使用arcpy批量删除shp数据字段和添加字段 | MapInfo Blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/css/my.css">
 
-    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/jquery/jquery.min.js"></script>
 	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 	<link rel="stylesheet" href="/js/prism/prism.css">
 <style type="text/css" lang="css">
@@ -161,7 +161,7 @@
     loaded();
 })()
  </script><meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="MapInfo Blog" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 
 
  <div id="loading-container">
@@ -180,10 +180,12 @@
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
+					<div>	
                     
-                    <img src="/medias/logo_earth.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/logo_earth.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">MapInfo Blog</span>
+					</div>
                 </a>
             </div>
             
@@ -294,7 +296,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo_earth.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/logo_earth.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">MapInfo Blog</div>
         <div class="logo-desc">
@@ -475,7 +477,7 @@
 </header>
 	
     
-<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
         let pwd = '';
@@ -491,7 +493,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -509,7 +511,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -660,14 +662,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    8 分
                 </div>
                 
 
@@ -754,79 +756,79 @@
 </tr>
 </tbody></table>
 <h3 id="2-3-设计思路"><a href="#2-3-设计思路" class="headerlink" title="2.3 设计思路"></a>2.3 设计思路</h3><p>首先调用制图模块arcpy.mapping读取当前地图文档，然后将当前地图文档的Layers图层转化为Python List；我们要筛选不符合要求的字段，及要求建立的字段创建列表，通过循环分别调用工具即可实现批量生成标准字段的工作任务。</p>
-<h3 id="2-4-代码展示"><a href="#2-4-代码展示" class="headerlink" title="2.4 代码展示"></a>2.4 代码展示</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">#生成标准国标字段 Version1.0 CopyRight by Mr Heisenberg
-import arcpy
-#打开地图文档
-mymxd &#x3D;arcpy.mapping.MapDocument(&quot;current&quot;)
-ary &#x3D;arcpy.mapping.ListLayers(mymxd)
-&#39;&#39;&#39;
+<h3 id="2-4-代码展示"><a href="#2-4-代码展示" class="headerlink" title="2.4 代码展示"></a>2.4 代码展示</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#生成标准国标字段 Version1.0 CopyRight by Mr Heisenberg</span>
+<span class="token keyword">import</span> arcpy
+<span class="token comment">#打开地图文档</span>
+mymxd <span class="token operator">=</span>arcpy<span class="token punctuation">.</span>mapping<span class="token punctuation">.</span>MapDocument<span class="token punctuation">(</span><span class="token string">"current"</span><span class="token punctuation">)</span>
+ary <span class="token operator">=</span>arcpy<span class="token punctuation">.</span>mapping<span class="token punctuation">.</span>ListLayers<span class="token punctuation">(</span>mymxd<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
 坐标系统解析
 地理坐标系统：CGCS2000国家质心坐标系统
 椭球体参数：
-长半轴a：6378137.0，扁率α：1&#x2F;298.257222101
+长半轴a：6378137.0，扁率α：1/298.257222101
 投影坐标系统：Gauss_Kruger高斯克里格3°带投影坐标
 中央经线：117°
 起始纬线：0°
 单位：m
-&#39;&#39;&#39;
-cgcs2000_39&#x3D;&quot;PROJCS[&#39;CGCS2000_3_Degree_GK_Zone_39&#39;,\
-GEOGCS[&#39;GCS_China_Geodetic_Coordinate_System_2000&#39;,\
-DATUM[&#39;D_China_2000&#39;,SPHEROID[&#39;CGCS2000&#39;,6378137.0,298.257222101]],\
-PRIMEM[&#39;Greenwich&#39;,0.0],UNIT[&#39;Degree&#39;,0.0174532925199433]],\
-PROJECTION[&#39;Gauss_Kruger&#39;],PARAMETER[&#39;False_Easting&#39;,39500000.0],\
-PARAMETER[&#39;False_Northing&#39;,0.0],PARAMETER[&#39;Central_Meridian&#39;,117.0],\
-PARAMETER[&#39;Scale_Factor&#39;,1.0],PARAMETER[&#39;Latitude_Of_Origin&#39;,0.0],UNIT[&#39;Meter&#39;,1.0]]&quot;
-#删除字段列表
-delete_list&#x3D;[&quot;YBZDDM&quot;,&quot;QSXZ&quot;,&quot;ZDSYQLX&quot;,&quot;PZMJ&quot;,&quot;TDJB&quot;,&quot;SBDJ&quot;,&quot;QDJG&quot;,\
-&quot;SFGY&quot;,&quot;BLC&quot;,&quot;PZYT&quot;,&quot;SJYT&quot;,&quot;QLSLQK&quot;,&quot;GMJJHYFLDM&quot;,&quot;JZZDMJ&quot;,&quot;JZZMJ&quot;,&quot;SYQSRQ&quot;,\
-&quot;SYQX&quot;,&quot;SYZZRQ&quot;,&quot;QTSM&quot;,&quot;QLXZ&quot;]
-#添加字段列表属性
-fields&#x3D;[[&quot;ZL&quot;,&quot;TEXT&quot;,200],[&quot;ZDMJ&quot;,&quot;FLOAT&quot;,15,4],[&quot;MJDW&quot;,&quot;TEXT&quot;,2],[&quot;DJ&quot;,&quot;TEXT&quot;,2],\
-		[&quot;JG&quot;,&quot;FLOAT&quot;,15,4],[&quot;YT&quot;,&quot;TEXT&quot;,4],[&quot;ZDT&quot;,&quot;TEXT&quot;,200],[&quot;QLSDFS&quot;,&quot;TEXT&quot;,2],\
-        [&quot;RJL&quot;,&quot;TEXT&quot;,20],[&quot;JZXG&quot;,&quot;FLOAT&quot;,5,2],[&quot;ZDSZD&quot;,&quot;TEXT&quot;,200],[&quot;ZDSZN&quot;,&quot;TEXT&quot;,200],\
-		[&quot;ZDSZX&quot;,&quot;TEXT&quot;,200],[&quot;ZDSZB&quot;,&quot;TEXT&quot;,200],[&quot;DAH&quot;,&quot;TEXT&quot;,254],[&quot;BZ&quot;,&quot;TEXT&quot;,254],\
-		[&quot;TFH&quot;,&quot;TEXT&quot;,50],[&quot;DJH&quot;,&quot;TEXT&quot;,20],[&quot;ZT&quot;,&quot;TEXT&quot;,2],[&quot;YTMC&quot;,&quot;TEXT&quot;,254],\
-		[&quot;QXDM&quot;,&quot;TEXT&quot;,6],[&quot;QLXZ&quot;,&quot;TEXT&quot;,4]] 
-#给特殊字段赋值
-special_fields&#x3D;[&quot;ZDBZ&quot;,&quot;ZDDZ&quot;,&quot;ZDNZ&quot;,&quot;ZDXZ&quot;,&quot;SZTFH&quot;,&quot;JZRJL&quot;,&quot;SCMJ&quot;,&quot;TDZL&quot;]
-#固定字段
-fixed_fields&#x3D;[[&quot;QLLX&quot;,&quot;5&quot;],[&quot;QLXZ&quot;,&quot;200&quot;],[&quot;QLSDFS&quot;,&quot;2&quot;],[&quot;MJDW&quot;,&quot;1&quot;],[&quot;YT&quot;,&quot;072&quot;],[&quot;ZT&quot;,&quot;1&quot;],\
-[&quot;YTMC&quot;,&quot;农村宅基地&quot;],[&quot;QXDM&quot;,&quot;131124&quot;]]
-#新生成字段
-New_fields&#x3D;[&quot;ZDSZB&quot;,&quot;ZDSZD&quot;,&quot;ZDSZN&quot;,&quot;ZDSZX&quot;,&quot;TFH&quot;,&quot;RJL&quot;,&quot;ZDMJ&quot;,&quot;ZL&quot;]
-#生成删除集
-delete_txt&#x3D;&quot;&quot;
-for delete in delete_list:
-	delete_txt+&#x3D;delete+&quot;;&quot;
-for lyr in ary:
-	in_table&#x3D;lyr.dataSource
-	if in_table.find(&quot;.shp&quot;)&gt;0:
-		arcpy.DeleteField_management(in_table,delete_txt)
-		print(&quot;多余字段删除完成！&quot;)
-		for count in fields:
-			if count[1]&#x3D;&#x3D;&quot;TEXT&quot;:
-				print(&quot;名称:&#123;0&#125;———— 类形:&#123;1&#125;———— 长度:&#123;2&#125;&quot;.format(count[0],count[1],count[2]))
-arcpy.AddField_management(in_table,count[0],count[1],field_length&#x3D;count[2])
-			else:
-				print(&quot;名称:&#123;0&#125;———— 类形:&#123;1&#125;———— 精度:&#123;2&#125;———— 小数点位数：&#123;3&#125;&quot;.format(count[0],count[1],count[2],count[3]))
-				arcpy.AddField_management(in_table,count[0],count[1],count[2],count[3])
-		print(&quot;创建字段完成！&quot;)
-		for field in fixed_fields:
-			field_&#x3D;&quot;\&quot;&quot;+field[1]+&quot;\&quot;&quot;
-			arcpy.CalculateField_management(in_table,field[0],field_, &quot;VB&quot;)
-		print(&quot;赋予字段固定值完成！&quot;)
-		for i in range(len(special_fields)):
-			field&#x3D;&quot;[&quot;+special_fields[i]+&quot;]&quot;
-			arcpy.CalculateField_management(in_table,New_fields[i],field,&quot;VB&quot;)
-			arcpy.DeleteField_management(in_table,special_fields[i])
-		print(&quot;数据交换完成！&quot;)
-		arcpy.DefineProjection_management(in_table,cgcs2000_39) 
-		print(&quot;定义国家2000坐标系统完成！&quot;)
-	else:
-		next
-del mymxd
-arcpy.RefreshActiveView()
-print(&quot;------标准字段完成------&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+'''</span>
+cgcs2000_39<span class="token operator">=</span>"PROJCS<span class="token punctuation">[</span><span class="token string">'CGCS2000_3_Degree_GK_Zone_39'</span><span class="token punctuation">,</span>\
+GEOGCS<span class="token punctuation">[</span><span class="token string">'GCS_China_Geodetic_Coordinate_System_2000'</span><span class="token punctuation">,</span>\
+DATUM<span class="token punctuation">[</span><span class="token string">'D_China_2000'</span><span class="token punctuation">,</span>SPHEROID<span class="token punctuation">[</span><span class="token string">'CGCS2000'</span><span class="token punctuation">,</span><span class="token number">6378137.0</span><span class="token punctuation">,</span><span class="token number">298.257222101</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>\
+PRIMEM<span class="token punctuation">[</span><span class="token string">'Greenwich'</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>UNIT<span class="token punctuation">[</span><span class="token string">'Degree'</span><span class="token punctuation">,</span><span class="token number">0.0174532925199433</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>\
+PROJECTION<span class="token punctuation">[</span><span class="token string">'Gauss_Kruger'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>PARAMETER<span class="token punctuation">[</span><span class="token string">'False_Easting'</span><span class="token punctuation">,</span><span class="token number">39500000.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>\
+PARAMETER<span class="token punctuation">[</span><span class="token string">'False_Northing'</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>PARAMETER<span class="token punctuation">[</span><span class="token string">'Central_Meridian'</span><span class="token punctuation">,</span><span class="token number">117.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>\
+PARAMETER<span class="token punctuation">[</span><span class="token string">'Scale_Factor'</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>PARAMETER<span class="token punctuation">[</span><span class="token string">'Latitude_Of_Origin'</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>UNIT<span class="token punctuation">[</span><span class="token string">'Meter'</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>"
+<span class="token comment">#删除字段列表</span>
+delete_list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"YBZDDM"</span><span class="token punctuation">,</span><span class="token string">"QSXZ"</span><span class="token punctuation">,</span><span class="token string">"ZDSYQLX"</span><span class="token punctuation">,</span><span class="token string">"PZMJ"</span><span class="token punctuation">,</span><span class="token string">"TDJB"</span><span class="token punctuation">,</span><span class="token string">"SBDJ"</span><span class="token punctuation">,</span><span class="token string">"QDJG"</span><span class="token punctuation">,</span>\
+<span class="token string">"SFGY"</span><span class="token punctuation">,</span><span class="token string">"BLC"</span><span class="token punctuation">,</span><span class="token string">"PZYT"</span><span class="token punctuation">,</span><span class="token string">"SJYT"</span><span class="token punctuation">,</span><span class="token string">"QLSLQK"</span><span class="token punctuation">,</span><span class="token string">"GMJJHYFLDM"</span><span class="token punctuation">,</span><span class="token string">"JZZDMJ"</span><span class="token punctuation">,</span><span class="token string">"JZZMJ"</span><span class="token punctuation">,</span><span class="token string">"SYQSRQ"</span><span class="token punctuation">,</span>\
+<span class="token string">"SYQX"</span><span class="token punctuation">,</span><span class="token string">"SYZZRQ"</span><span class="token punctuation">,</span><span class="token string">"QTSM"</span><span class="token punctuation">,</span><span class="token string">"QLXZ"</span><span class="token punctuation">]</span>
+<span class="token comment">#添加字段列表属性</span>
+fields<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"ZL"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"ZDMJ"</span><span class="token punctuation">,</span><span class="token string">"FLOAT"</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"MJDW"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"DJ"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>\
+		<span class="token punctuation">[</span><span class="token string">"JG"</span><span class="token punctuation">,</span><span class="token string">"FLOAT"</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"YT"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"ZDT"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"QLSDFS"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>\
+        <span class="token punctuation">[</span><span class="token string">"RJL"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"JZXG"</span><span class="token punctuation">,</span><span class="token string">"FLOAT"</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"ZDSZD"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"ZDSZN"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">,</span>\
+		<span class="token punctuation">[</span><span class="token string">"ZDSZX"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"ZDSZB"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"DAH"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">254</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"BZ"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">254</span><span class="token punctuation">]</span><span class="token punctuation">,</span>\
+		<span class="token punctuation">[</span><span class="token string">"TFH"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"DJH"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"ZT"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"YTMC"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">254</span><span class="token punctuation">]</span><span class="token punctuation">,</span>\
+		<span class="token punctuation">[</span><span class="token string">"QXDM"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"QLXZ"</span><span class="token punctuation">,</span><span class="token string">"TEXT"</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span> 
+<span class="token comment">#给特殊字段赋值</span>
+special_fields<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"ZDBZ"</span><span class="token punctuation">,</span><span class="token string">"ZDDZ"</span><span class="token punctuation">,</span><span class="token string">"ZDNZ"</span><span class="token punctuation">,</span><span class="token string">"ZDXZ"</span><span class="token punctuation">,</span><span class="token string">"SZTFH"</span><span class="token punctuation">,</span><span class="token string">"JZRJL"</span><span class="token punctuation">,</span><span class="token string">"SCMJ"</span><span class="token punctuation">,</span><span class="token string">"TDZL"</span><span class="token punctuation">]</span>
+<span class="token comment">#固定字段</span>
+fixed_fields<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"QLLX"</span><span class="token punctuation">,</span><span class="token string">"5"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"QLXZ"</span><span class="token punctuation">,</span><span class="token string">"200"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"QLSDFS"</span><span class="token punctuation">,</span><span class="token string">"2"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"MJDW"</span><span class="token punctuation">,</span><span class="token string">"1"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"YT"</span><span class="token punctuation">,</span><span class="token string">"072"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"ZT"</span><span class="token punctuation">,</span><span class="token string">"1"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>\
+<span class="token punctuation">[</span><span class="token string">"YTMC"</span><span class="token punctuation">,</span><span class="token string">"农村宅基地"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"QXDM"</span><span class="token punctuation">,</span><span class="token string">"131124"</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token comment">#新生成字段</span>
+New_fields<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"ZDSZB"</span><span class="token punctuation">,</span><span class="token string">"ZDSZD"</span><span class="token punctuation">,</span><span class="token string">"ZDSZN"</span><span class="token punctuation">,</span><span class="token string">"ZDSZX"</span><span class="token punctuation">,</span><span class="token string">"TFH"</span><span class="token punctuation">,</span><span class="token string">"RJL"</span><span class="token punctuation">,</span><span class="token string">"ZDMJ"</span><span class="token punctuation">,</span><span class="token string">"ZL"</span><span class="token punctuation">]</span>
+<span class="token comment">#生成删除集</span>
+delete_txt<span class="token operator">=</span><span class="token string">""</span>
+<span class="token keyword">for</span> delete <span class="token keyword">in</span> delete_list<span class="token punctuation">:</span>
+	delete_txt<span class="token operator">+=</span>delete<span class="token operator">+</span><span class="token string">";"</span>
+<span class="token keyword">for</span> lyr <span class="token keyword">in</span> ary<span class="token punctuation">:</span>
+	in_table<span class="token operator">=</span>lyr<span class="token punctuation">.</span>dataSource
+	<span class="token keyword">if</span> in_table<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">".shp"</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
+		arcpy<span class="token punctuation">.</span>DeleteField_management<span class="token punctuation">(</span>in_table<span class="token punctuation">,</span>delete_txt<span class="token punctuation">)</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"多余字段删除完成！"</span><span class="token punctuation">)</span>
+		<span class="token keyword">for</span> count <span class="token keyword">in</span> fields<span class="token punctuation">:</span>
+			<span class="token keyword">if</span> count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">"TEXT"</span><span class="token punctuation">:</span>
+				<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"名称:&#123;0&#125;———— 类形:&#123;1&#125;———— 长度:&#123;2&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>count<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+arcpy<span class="token punctuation">.</span>AddField_management<span class="token punctuation">(</span>in_table<span class="token punctuation">,</span>count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>field_length<span class="token operator">=</span>count<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+			<span class="token keyword">else</span><span class="token punctuation">:</span>
+				<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"名称:&#123;0&#125;———— 类形:&#123;1&#125;———— 精度:&#123;2&#125;———— 小数点位数：&#123;3&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>count<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>count<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+				arcpy<span class="token punctuation">.</span>AddField_management<span class="token punctuation">(</span>in_table<span class="token punctuation">,</span>count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>count<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>count<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"创建字段完成！"</span><span class="token punctuation">)</span>
+		<span class="token keyword">for</span> field <span class="token keyword">in</span> fixed_fields<span class="token punctuation">:</span>
+			field_<span class="token operator">=</span><span class="token string">"\""</span><span class="token operator">+</span>field<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">"\""</span>
+			arcpy<span class="token punctuation">.</span>CalculateField_management<span class="token punctuation">(</span>in_table<span class="token punctuation">,</span>field<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>field_<span class="token punctuation">,</span> <span class="token string">"VB"</span><span class="token punctuation">)</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"赋予字段固定值完成！"</span><span class="token punctuation">)</span>
+		<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>special_fields<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+			field<span class="token operator">=</span><span class="token string">"["</span><span class="token operator">+</span>special_fields<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">"]"</span>
+			arcpy<span class="token punctuation">.</span>CalculateField_management<span class="token punctuation">(</span>in_table<span class="token punctuation">,</span>New_fields<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>field<span class="token punctuation">,</span><span class="token string">"VB"</span><span class="token punctuation">)</span>
+			arcpy<span class="token punctuation">.</span>DeleteField_management<span class="token punctuation">(</span>in_table<span class="token punctuation">,</span>special_fields<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"数据交换完成！"</span><span class="token punctuation">)</span>
+		arcpy<span class="token punctuation">.</span>DefineProjection_management<span class="token punctuation">(</span>in_table<span class="token punctuation">,</span>cgcs2000_39<span class="token punctuation">)</span> 
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"定义国家2000坐标系统完成！"</span><span class="token punctuation">)</span>
+	<span class="token keyword">else</span><span class="token punctuation">:</span>
+		<span class="token builtin">next</span>
+<span class="token keyword">del</span> mymxd
+arcpy<span class="token punctuation">.</span>RefreshActiveView<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"------标准字段完成------"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>欢迎大家积极评论。</p>
 
@@ -908,12 +910,12 @@ print(&quot;------标准字段完成------&quot;)<span aria-hidden="true" class=
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/share/css/share.min.css">
 <div id="article-share">
 
     
     <div class="social-share" data-sites="google,qq,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -1031,10 +1033,10 @@ print(&quot;------标准字段完成------&quot;)<span aria-hidden="true" class=
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1053,8 +1055,8 @@ print(&quot;------标准字段完成------&quot;)<span aria-hidden="true" class=
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/css/my-gitalk.css">
 
 <div class="card gitalk-card" data-aos="fade-up">
     <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
@@ -1064,7 +1066,7 @@ print(&quot;------标准字段完成------&quot;)<span aria-hidden="true" class=
     <div id="gitalk-container" class="card-content"></div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
         clientID: 'bd3a1c296a03e6545dd7',
@@ -1359,8 +1361,8 @@ print(&quot;------标准字段完成------&quot;)<span aria-hidden="true" class=
     </div>
 </div>
 
-<script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1393,7 +1395,7 @@ print(&quot;------标准字段完成------&quot;)<span aria-hidden="true" class=
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="对于使用hexo-prism-plugin插件代码无法渲染问题的解决方法">
+                        <img src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="对于使用hexo-prism-plugin插件代码无法渲染问题的解决方法">
                         
                         <span class="card-title">对于使用hexo-prism-plugin插件代码无法渲染问题的解决方法</span>
                     </div>
@@ -1450,7 +1452,7 @@ print(&quot;------标准字段完成------&quot;)<span aria-hidden="true" class=
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="解决大文件上传失败git命令失效问题">
+                        <img src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="解决大文件上传失败git命令失效问题">
                         
                         <span class="card-title">解决大文件上传失败git命令失效问题</span>
                     </div>
@@ -1505,21 +1507,21 @@ print(&quot;------标准字段完成------&quot;)<span aria-hidden="true" class=
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1543,7 +1545,7 @@ print(&quot;------标准字段完成------&quot;)<span aria-hidden="true" class=
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1655,7 +1657,7 @@ WIDGET = {
     <script src="/js/prism/prism.js" async></script>
 <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
         
@@ -1705,7 +1707,7 @@ WIDGET = {
     </div>
 </div>
 
-<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
@@ -1719,7 +1721,7 @@ WIDGET = {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.5k</span>&nbsp;字
+                class="white-color">3.2k</span>&nbsp;字
             
             
             
@@ -1785,7 +1787,7 @@ WIDGET = {
             
             <br>
             
-            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+            <span id="icp"><img src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/medias/icp.png" style="vertical-align: text-bottom;" />
                 <a href="/null" target="_blank"></a>
             </span>
             
@@ -1840,10 +1842,10 @@ WIDGET = {
     </div>
 </div>
 
-<script src="/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/search.xml", 'searchInput', 'searchResult');
 });
 </script>
 
@@ -1854,12 +1856,12 @@ $(function () {
     </a>
 </div>
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1880,10 +1882,10 @@ $(function () {
 </script>
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/others/busuanzi.pure.mini.js"></script>
     
     
 
@@ -1893,23 +1895,23 @@ $(function () {
     <script type="text/javascript" color="100,0,255"
         pointColor="0,0,255" opacity='0.7'
         zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
+        src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/background/canvas-nest.js"></script>
     
 
     
 
     
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/libs/instantpage/instantpage.js" type="module"></script>
     
 	<!-- 雪花特效 --> 
 	 
 	<script type="text/javascript" src="/libs/others/snow.js"></script> 
-	<script src="/js/FunnyTitle.js"></script>
-	<script src="/./js/click_show_text.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/js/FunnyTitle.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/MrWhitebare/MrWhitebare.github.io/./js/click_show_text.js"></script>
 	<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
 	<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
 	<script type="text/javascript" src="/js/fireworks.js"></script>
@@ -1921,6 +1923,6 @@ $(function () {
 	}
 	</script>
 	
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"log":false});</script></body>
+</body>
 
 </html>
