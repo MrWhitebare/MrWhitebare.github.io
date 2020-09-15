@@ -14,6 +14,81 @@
       </tags>
   </entry>
   <entry>
+    <title>对于使用hexo-prism-plugin插件代码无法渲染问题的解决方法</title>
+    <url>/2020/091331943.html</url>
+    <content><![CDATA[<h2 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1.问题描述"></a>1.问题描述</h2><p>按照其他博主的对于hexo的个性化配置，我使用了代码高亮插件——prism-plugin，但是使用此插件却无法实现代码高亮的功能；而且对于代码行数也无法进行正确的渲染，大致情况如下。</p>
+<p><img src="/medias/blogpic/line_error.png" alt="渲染错误"></p>
+<h3 id="1-1-我的站点hexo配置情况"><a href="#1-1-我的站点hexo配置情况" class="headerlink" title="1.1 我的站点hexo配置情况"></a>1.1 我的站点hexo配置情况</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">hexo: 5.1.1
+hexo-cli: 4.2.0
+os: Windows_NT 10.0.18363 win32 x64
+node: 12.16.1
+v8: 7.8.279.23-node.31
+uv: 1.34.0
+zlib: 1.2.11
+brotli: 1.0.7
+ares: 1.15.0
+modules: 72
+nghttp2: 1.40.0
+napi: 5
+llhttp: 2.0.4
+http_parser: 2.9.3
+openssl: 1.1.1d
+cldr: 35.1
+icu: 64.2
+tz: 2019c
+unicode: 12.1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-2-使用的安装方法"><a href="#1-2-使用的安装方法" class="headerlink" title="1.2 使用的安装方法"></a>1.2 使用的安装方法</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ cnpm install hexo-prism-plugin --save
+$ cnpm i -S hexo-prism-plugin &#x2F;&#x2F;使用此写法也可以实现安装
+$ hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>hexo根目录下_config.yml文件下的配置情况：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">highlight:
+  enable: false
+prism_plugin:
+  mode: &#39;preprocess&#39;    # realtime&#x2F;preprocess
+  theme: &#39;default&#39;
+  line_number: true   # default false
+  custom_css: &#39;&#39;     # optional<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-3-hexo使用主题为matery"><a href="#1-3-hexo使用主题为matery" class="headerlink" title="1.3 hexo使用主题为matery"></a>1.3 hexo使用主题为matery</h3><p>hexo-themes-matery主题 <a href="https://github.com/blinkfox/hexo-theme-matery">https://github.com/blinkfox/hexo-theme-matery</a></p>
+<p>尽管安装过程与配置情况与网上博客相同，但仍然无法实现代码高亮功能。希望情况和我一样的小伙伴可以耐心阅读下去😀。</p>
+<h2 id="2-问题探索"><a href="#2-问题探索" class="headerlink" title="2.问题探索"></a>2.问题探索</h2><p>首先，我切换了hexo的主题为默认主题landscape，发现该主题下可以实现代码行数正确显示；但是仍然无法实现高亮显示，联想matery主题下代码行数显示错误——盲猜可能是主题适配存在缺陷。</p>
+<p>然后，我转变了思路——寻找可以实现代码高亮的方式；找到了此篇博文——&gt;<a href="https://www.jianshu.com/p/f395d92a1110">https://www.jianshu.com/p/f395d92a1110</a></p>
+<p>按照其思路实现了代码高亮功能😁</p>
+<p><img src="/medias/blogpic/line_correct.png" alt="效果显示"></p>
+<h2 id="3-问题解决"><a href="#3-问题解决" class="headerlink" title="3.问题解决"></a>3.问题解决</h2><h3 id="3-1-进入prismjs官网"><a href="#3-1-进入prismjs官网" class="headerlink" title="3.1 进入prismjs官网"></a>3.1 进入prismjs官网</h3><p>prismjs <a href="https://prismjs.com/download.html">https://prismjs.com/download.html</a></p>
+<p>prismjs介绍：Prism是一种轻量级的，可扩展的语法突出显示工具，在构建时考虑了现代Web标准。</p>
+<h3 id="3-2-选择主题、语言、其他插件"><a href="#3-2-选择主题、语言、其他插件" class="headerlink" title="3.2 选择主题、语言、其他插件"></a>3.2 选择主题、语言、其他插件</h3><p><img src="/medias/blogpic/primjs.png" alt="prismjs"></p>
+<p>点击下载JS和CSS code即可</p>
+<h3 id="3-3-文件放置位置"><a href="#3-3-文件放置位置" class="headerlink" title="3.3 文件放置位置"></a>3.3 文件放置位置</h3><p>step1. 可以在themes\hexo-theme-matery\source\js下新建prism文件夹，用来存放js与css代码。</p>
+<p>step2. 找到此文件hexo-theme-matery\layout_partial\head.ejs打开，在</head>标签之前黏贴以下代码：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/js/prism/prism.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>step3. 找到此文件hexo-theme-matery\layout_partial\footer.ejs打卡，在最后部分黏贴以下代码：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/js/prism/prism.js<span class="token punctuation">"</span></span> <span class="token attr-name">async</span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>step4. 记得在hexo的根目录_config.yml下设置enable: false</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">highlight:
+  enable: false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>step5. 重新生成博客文件，重启本地服务。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo clean
+$ hexo generate
+$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>欢迎大家积极评论交流。</p>
+]]></content>
+      <categories>
+        <category>日常维护</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>prims-plugin</tag>
+        <tag>matery</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用arcpy批量删除shp数据字段和添加字段</title>
     <url>/2020/0912976.html</url>
     <content><![CDATA[<h2 id="ArcPy"><a href="#ArcPy" class="headerlink" title="ArcPy"></a>ArcPy</h2><h3 id="1-1-ArcPy介绍"><a href="#1-1-ArcPy介绍" class="headerlink" title="1.1 ArcPy介绍"></a>1.1 ArcPy介绍</h3><p>ArcPy 是一个以成功的 arcgisscripting 模块为基础并继承了 arcgisscripting 功能进而构建而成的站点包。目的是为以实用高效的方式通过 Python 执行地理数据分析、数据转换、数据管理和地图自动化创建基础。</p>
@@ -188,84 +263,9 @@ print(&quot;------标准字段完成------&quot;)<span aria-hidden="true" class=
         <category>日常维护</category>
       </categories>
       <tags>
+        <tag>hexo</tag>
+        <tag>matery</tag>
         <tag>day_error_log</tag>
-        <tag>hexo</tag>
-        <tag>matery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>对于使用hexo-prism-plugin插件代码无法渲染问题的解决方法</title>
-    <url>/2020/091331943.html</url>
-    <content><![CDATA[<h2 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1.问题描述"></a>1.问题描述</h2><p>按照其他博主的对于hexo的个性化配置，我使用了代码高亮插件——prism-plugin，但是使用此插件却无法实现代码高亮的功能；而且对于代码行数也无法进行正确的渲染，大致情况如下。</p>
-<p><img src="/medias/blogpic/line_error.png" alt="渲染错误"></p>
-<h3 id="1-1-我的站点hexo配置情况"><a href="#1-1-我的站点hexo配置情况" class="headerlink" title="1.1 我的站点hexo配置情况"></a>1.1 我的站点hexo配置情况</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">hexo: 5.1.1
-hexo-cli: 4.2.0
-os: Windows_NT 10.0.18363 win32 x64
-node: 12.16.1
-v8: 7.8.279.23-node.31
-uv: 1.34.0
-zlib: 1.2.11
-brotli: 1.0.7
-ares: 1.15.0
-modules: 72
-nghttp2: 1.40.0
-napi: 5
-llhttp: 2.0.4
-http_parser: 2.9.3
-openssl: 1.1.1d
-cldr: 35.1
-icu: 64.2
-tz: 2019c
-unicode: 12.1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="1-2-使用的安装方法"><a href="#1-2-使用的安装方法" class="headerlink" title="1.2 使用的安装方法"></a>1.2 使用的安装方法</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ cnpm install hexo-prism-plugin --save
-$ cnpm i -S hexo-prism-plugin &#x2F;&#x2F;使用此写法也可以实现安装
-$ hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>hexo根目录下_config.yml文件下的配置情况：</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">highlight:
-  enable: false
-prism_plugin:
-  mode: &#39;preprocess&#39;    # realtime&#x2F;preprocess
-  theme: &#39;default&#39;
-  line_number: true   # default false
-  custom_css: &#39;&#39;     # optional<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="1-3-hexo使用主题为matery"><a href="#1-3-hexo使用主题为matery" class="headerlink" title="1.3 hexo使用主题为matery"></a>1.3 hexo使用主题为matery</h3><p>hexo-themes-matery主题 <a href="https://github.com/blinkfox/hexo-theme-matery">https://github.com/blinkfox/hexo-theme-matery</a></p>
-<p>尽管安装过程与配置情况与网上博客相同，但仍然无法实现代码高亮功能。希望情况和我一样的小伙伴可以耐心阅读下去😀。</p>
-<h2 id="2-问题探索"><a href="#2-问题探索" class="headerlink" title="2.问题探索"></a>2.问题探索</h2><p>首先，我切换了hexo的主题为默认主题landscape，发现该主题下可以实现代码行数正确显示；但是仍然无法实现高亮显示，联想matery主题下代码行数显示错误——盲猜可能是主题适配存在缺陷。</p>
-<p>然后，我转变了思路——寻找可以实现代码高亮的方式；找到了此篇博文——&gt;<a href="https://www.jianshu.com/p/f395d92a1110">https://www.jianshu.com/p/f395d92a1110</a></p>
-<p>按照其思路实现了代码高亮功能😁</p>
-<p><img src="/medias/blogpic/line_correct.png" alt="效果显示"></p>
-<h2 id="3-问题解决"><a href="#3-问题解决" class="headerlink" title="3.问题解决"></a>3.问题解决</h2><h3 id="3-1-进入prismjs官网"><a href="#3-1-进入prismjs官网" class="headerlink" title="3.1 进入prismjs官网"></a>3.1 进入prismjs官网</h3><p>prismjs <a href="https://prismjs.com/download.html">https://prismjs.com/download.html</a></p>
-<p>prismjs介绍：Prism是一种轻量级的，可扩展的语法突出显示工具，在构建时考虑了现代Web标准。</p>
-<h3 id="3-2-选择主题、语言、其他插件"><a href="#3-2-选择主题、语言、其他插件" class="headerlink" title="3.2 选择主题、语言、其他插件"></a>3.2 选择主题、语言、其他插件</h3><p><img src="/medias/blogpic/primjs.png" alt="prismjs"></p>
-<p>点击下载JS和CSS code即可</p>
-<h3 id="3-3-文件放置位置"><a href="#3-3-文件放置位置" class="headerlink" title="3.3 文件放置位置"></a>3.3 文件放置位置</h3><p>step1. 可以在themes\hexo-theme-matery\source\js下新建prism文件夹，用来存放js与css代码。</p>
-<p>step2. 找到此文件hexo-theme-matery\layout_partial\head.ejs打开，在</head>标签之前黏贴以下代码：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/js/prism/prism.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>step3. 找到此文件hexo-theme-matery\layout_partial\footer.ejs打卡，在最后部分黏贴以下代码：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/js/prism/prism.js<span class="token punctuation">"</span></span> <span class="token attr-name">async</span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>step4. 记得在hexo的根目录_config.yml下设置enable: false</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">highlight:
-  enable: false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>step5. 重新生成博客文件，重启本地服务。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo clean
-$ hexo generate
-$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>欢迎大家积极评论交流。</p>
-]]></content>
-      <categories>
-        <category>日常维护</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>matery</tag>
-        <tag>prims-plugin</tag>
       </tags>
   </entry>
 </search>
