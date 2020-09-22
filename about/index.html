@@ -270,7 +270,7 @@
       </li>
       
       <li>
-        <a target="_blank" rel="noopener" href="https://www.huya.com/688">
+        <a href="/entertainments">
           
           <i class="fas fa-ad" style="margin-top: -20px; zoom: 0.6;"></i>
           
@@ -279,7 +279,7 @@
       </li>
       
       <li>
-        <a target="_blank" rel="noopener" href="https://www.cnblogs.com/Whitetombare/">
+        <a href="/codes">
           
           <i class="fas fa-terminal" style="margin-top: -20px; zoom: 0.6;"></i>
           
@@ -406,7 +406,7 @@
               
                 <li>
 
-                  <a target="_blank" rel="noopener" href="https://www.huya.com/688 " style="margin-left:75px">
+                  <a href="/entertainments " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-ad" style="position: absolute;left:50px" ></i>
 			      
@@ -416,7 +416,7 @@
               
                 <li>
 
-                  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/Whitetombare/ " style="margin-left:75px">
+                  <a href="/codes " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-terminal" style="position: absolute;left:50px" ></i>
 			      
@@ -827,7 +827,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"亲情","value":1},{"name":"服务端编程","value":1},{"name":"GIS","value":1},{"name":"日常维护","value":2}],
+                data: [{"name":"日常维护","value":2},{"name":"亲情","value":1},{"name":"服务端编程","value":1},{"name":"GIS","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -851,7 +851,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["hexo","matery","怀念","回忆","反思","C#","using","Python","ArcGIS","ArcPY"]
+                data: ["hexo","matery","prims-plugin","怀念","回忆","反思","day_error_log","C#","using","Python"]
             }
         ],
         yAxis: [
@@ -1045,6 +1045,24 @@
         <div class="tag-chips center-align">
             
             
+            <a href="/tags/hexo/">
+                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
+            </a>
+            
+            
+            
+            <a href="/tags/prims-plugin/">
+                <span class="chip center-align waves-effect waves-light chip-default">prims-plugin</span>
+            </a>
+            
+            
+            
+            <a href="/tags/matery/">
+                <span class="chip center-align waves-effect waves-light chip-default">matery</span>
+            </a>
+            
+            
+            
             <a href="/tags/%E6%80%80%E5%BF%B5/">
                 <span class="chip center-align waves-effect waves-light chip-default">怀念</span>
             </a>
@@ -1059,6 +1077,12 @@
             
             <a href="/tags/%E5%8F%8D%E6%80%9D/">
                 <span class="chip center-align waves-effect waves-light chip-default">反思</span>
+            </a>
+            
+            
+            
+            <a href="/tags/day-error-log/">
+                <span class="chip center-align waves-effect waves-light chip-default">day_error_log</span>
             </a>
             
             
@@ -1081,30 +1105,6 @@
             
             <a href="/tags/ArcPY/">
                 <span class="chip center-align waves-effect waves-light chip-default">ArcPY</span>
-            </a>
-            
-            
-            
-            <a href="/tags/day-error-log/">
-                <span class="chip center-align waves-effect waves-light chip-default">day_error_log</span>
-            </a>
-            
-            
-            
-            <a href="/tags/hexo/">
-                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
-            </a>
-            
-            
-            
-            <a href="/tags/matery/">
-                <span class="chip center-align waves-effect waves-light chip-default">matery</span>
-            </a>
-            
-            
-            
-            <a href="/tags/prims-plugin/">
-                <span class="chip center-align waves-effect waves-light chip-default">prims-plugin</span>
             </a>
             
             
@@ -1446,6 +1446,7 @@ $(function () {
 	<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
 	<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
 	<script type="text/javascript" src="/js/fireworks.js"></script>
+	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 	<script type="text/javascript">
 	//只在桌面版网页启用特效
 	var windowWidth = $(window).width();
