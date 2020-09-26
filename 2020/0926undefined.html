@@ -657,8 +657,12 @@
                                 <span class="chip bg-color">C#</span>
                             </a>
                         
-                            <a href="/tags/using/">
-                                <span class="chip bg-color">using</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
+                            </a>
+                        
+                            <a href="/tags/Access/">
+                                <span class="chip bg-color">Access</span>
                             </a>
                         
                     </div>
@@ -682,28 +686,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-17
+                    2020-09-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-09-17
+                    2020-09-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    9 分
                 </div>
                 
 
@@ -718,7 +722,267 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-创建命名空间别名"><a href="#1-创建命名空间别名" class="headerlink" title="1. 创建命名空间别名"></a>1. 创建命名空间别名</h2>
+                <h2 id="1-using关键字的用法"><a href="#1-using关键字的用法" class="headerlink" title="1.using关键字的用法"></a>1.using关键字的用法</h2><h3 id="1-1-引用命名空间"><a href="#1-1-引用命名空间" class="headerlink" title="1.1 引用命名空间"></a>1.1 引用命名空间</h3><p>&emsp;&emsp;应用名称空间<strong>namespace</strong>，可以引用我们需要的程序集，然后在程序中我们就不必再写详细的名称空间类型。</p>
+<pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">using system;
+using System.Data.OleDb;
+using System.Data;
+using System.Configuration;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>&emsp;&emsp;引用命名空间，并不等于编译器编译时加载该命名空间所在的程序集，程序集的加载决定于程序中对该程序集是否存在调用操作，如果代码中不存在任何调用操作则编译器将不会加载using引入命名空间所在空间的程序集。因此，在源文件开头，引入多个命名空间，并非加载多个程序集，不会造成“过度引用“的弊端。</p>
+<h3 id="1-2-为命名空间或者类型创建别名"><a href="#1-2-为命名空间或者类型创建别名" class="headerlink" title="1.2 为命名空间或者类型创建别名"></a>1.2 为命名空间或者类型创建别名</h3><p>&emsp;&emsp;类似于<strong>Python</strong>关键字as,<strong>Pyhton</strong>的写法为：</p>
+<blockquote>
+<p>import turtle as t;</p>
+</blockquote>
+<p>而C# <strong>using</strong>关键字也可以做到简化名称，放便调用。</p>
+<pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">using ole&#x3D; System.Data.OleDb;
+using data&#x3D;System.Data;
+using con&#x3D;System.Configuration;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-3-using释放当前调用的资源"><a href="#1-3-using释放当前调用的资源" class="headerlink" title="1.3 using释放当前调用的资源"></a>1.3 using释放当前调用的资源</h3><p>&emsp;&emsp;<strong>using</strong>语句允许程序员指定使用资源的应当合适释放，using语句中使用对象必须实现<strong>IDisponsable</strong>接口，此方法释放对象的资源。</p>
+<p>&emsp;&emsp; 在程序编译阶段，编译器会自动将using语句生成try-finally语句，并在finally块中调用对象的Dispose方法，来清理资源.所以，using语句等效于try-finally语句。<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zengdingding/p/5112578.html">部分内容引用于博客园博主zdick</a></p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">&#x2F;*使用using语句*&#x2F;
+public static int CommandSQL(string SQL)
+&#123;&#x2F;&#x2F;建立连接
+   using (OleDbConnection objConnection &#x3D; new OleDbConnection(ConnectionString))
+   &#123;&#x2F;&#x2F;打开连接
+   objConnection.Open();
+   using (OleDbCommand cmd&#x3D;new OleDbCommand())
+   &#123;&#x2F;&#x2F;执行增删改查命令
+   cmd.Connection&#x3D;objConnection;
+   cmd.CommandText&#x3D;SQL;
+   int count&#x3D;cmd.ExecuteNonQuery();
+   &#x2F;*OleDbCommand.ExecuteNonQuery();
+   * 对于 UPDATE、INSERT 和 DELETE 语句，返回值为该命令所影响的行数。
+	*  对于其他所有类型的语句，返回值为 -1。
+   *&#x2F;            	
+    &#x2F;&#x2F;返回执行结果
+    return count;
+         &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="2-使用Data-Ole程序集连接Access数据库"><a href="#2-使用Data-Ole程序集连接Access数据库" class="headerlink" title="2. 使用Data.Ole程序集连接Access数据库"></a>2. 使用<strong>Data.Ole</strong>程序集连接Access数据库</h2><h3 id="2-1-创建共享文件夹"><a href="#2-1-创建共享文件夹" class="headerlink" title="2.1 创建共享文件夹"></a>2.1 创建共享文件夹</h3><h4 id="（1）打开cmd-命令窗口输入：ipconfig，并复制自己的IP地址。"><a href="#（1）打开cmd-命令窗口输入：ipconfig，并复制自己的IP地址。" class="headerlink" title="（1）打开cmd 命令窗口输入：ipconfig，并复制自己的IP地址。"></a>（1）打开cmd 命令窗口输入：ipconfig，并复制自己的IP地址。</h4><p><img src="https://gitee.com/mrwhitebare/blogpic/raw/master/blogpic/cmd.png" alt="查看自己的ip地址"></p>
+<h4 id="（2）右键将要共享的文件夹的属性，设置共享文件夹加入自己的ip-文件名即可完成配置-【注意斜杆】。"><a href="#（2）右键将要共享的文件夹的属性，设置共享文件夹加入自己的ip-文件名即可完成配置-【注意斜杆】。" class="headerlink" title="（2）右键将要共享的文件夹的属性，设置共享文件夹加入自己的ip/文件名即可完成配置 【注意斜杆】。"></a>（2）右键将要共享的文件夹的属性，设置共享文件夹加入自己的ip/文件名即可完成配置 【注意斜杆】。</h4><p><img src="https://gitee.com/mrwhitebare/blogpic/raw/master/blogpic/ip.png" alt="共享文件夹设置"></p>
+<h3 id="2-2-OleDb程序集介绍"><a href="#2-2-OleDb程序集介绍" class="headerlink" title="2.2 OleDb程序集介绍"></a>2.2 OleDb程序集介绍</h3><p>&emsp;&emsp;<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb?view=dotnet-plat-ext-3.1">System.Data.OleDb</a> 命名空间为 OLE DB .NET Framework数据提供程序。</p>
+<table>
+<thead>
+<tr>
+<th><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbcommand?view=dotnet-plat-ext-3.1">OleDbCommand</a></th>
+<th align="left">表示要对数据源执行的 SQL 语句或存储过程。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbcommandbuilder?view=dotnet-plat-ext-3.1">OleDbCommandBuilder</a></td>
+<td align="left">自动生成用于协调对 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.dataset?view=dotnet-plat-ext-3.1">DataSet</a> 的更改与关联数据库的单表命令。 此类不能被继承。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbconnection?view=dotnet-plat-ext-3.1">OleDbConnection</a></td>
+<td align="left">表示到数据源的连接是打开的。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbconnectionstringbuilder?view=dotnet-plat-ext-3.1">OleDbConnectionStringBuilder</a></td>
+<td align="left">为创建和管理由 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbconnection?view=dotnet-plat-ext-3.1">OleDbConnection</a> 类使用的连接字符串的内容提供了一种简单方法。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbdataadapter?view=dotnet-plat-ext-3.1">OleDbDataAdapter</a></td>
+<td align="left">表示用于填充 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.dataset?view=dotnet-plat-ext-3.1">DataSet</a> 和更新数据源的一组数据命令和一个数据库连接。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbdatareader?view=dotnet-plat-ext-3.1">OleDbDataReader</a></td>
+<td align="left">提供从数据源读取数据行的只进流的方法。 此类不能被继承。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbenumerator?view=dotnet-plat-ext-3.1">OleDbEnumerator</a></td>
+<td align="left">提供用于枚举本地网络中所有可用 OLE DB 提供程序的机制。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledberror?view=dotnet-plat-ext-3.1">OleDbError</a></td>
+<td align="left">收集与数据源返回的警告或错误有关的信息。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledberrorcollection?view=dotnet-plat-ext-3.1">OleDbErrorCollection</a></td>
+<td align="left">收集 OLE DB .NET Framework 数据提供程序生成的所有错误。 此类不能被继承。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbexception?view=dotnet-plat-ext-3.1">OleDbException</a></td>
+<td align="left">在基础提供程序返回 OLE DB 数据源的警告或错误时引发的异常。 此类不能被继承。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbfactory?view=dotnet-plat-ext-3.1">OleDbFactory</a></td>
+<td align="left">表示一组方法，这些方法用于创建 OLEDB 提供程序实现数据源类的实例。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbinfomessageeventargs?view=dotnet-plat-ext-3.1">OleDbInfoMessageEventArgs</a></td>
+<td align="left">为 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbconnection.infomessage?view=dotnet-plat-ext-3.1">InfoMessage</a> 事件提供数据。 此类不能被继承。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbmetadatacollectionnames?view=dotnet-plat-ext-3.1">OleDbMetaDataCollectionNames</a></td>
+<td align="left">提供一个常数列表，该列表与 GetSchema 方法一起使用以检索元数据集合。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbmetadatacolumnnames?view=dotnet-plat-ext-3.1">OleDbMetaDataColumnNames</a></td>
+<td align="left">提供静态值，这些值用于 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbmetadatacollectionnames?view=dotnet-plat-ext-3.1">OleDbMetaDataCollectionNames</a> 中包含的 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.datatable?view=dotnet-plat-ext-3.1">DataTable</a> 对象的列名称。 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.datatable?view=dotnet-plat-ext-3.1">DataTable</a> 由 GetSchema 方法创建。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbparameter?view=dotnet-plat-ext-3.1">OleDbParameter</a></td>
+<td align="left">表示 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbcommand?view=dotnet-plat-ext-3.1">OleDbCommand</a> 的参数，还可以是参数到 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.dataset?view=dotnet-plat-ext-3.1">DataSet</a> 列的映射。 此类不能被继承。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbparametercollection?view=dotnet-plat-ext-3.1">OleDbParameterCollection</a></td>
+<td align="left">表示与 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbcommand?view=dotnet-plat-ext-3.1">OleDbCommand</a> 相关的参数集合及其各自到 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.dataset?view=dotnet-plat-ext-3.1">DataSet</a> 中列的映射。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbpermission?view=dotnet-plat-ext-3.1">OleDbPermission</a></td>
+<td align="left">启用用于 OLE DB 的 .NET Framework 数据提供程序，以帮助确保用户具有足够的安全级别来访问 OLE DB 数据源。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbpermissionattribute?view=dotnet-plat-ext-3.1">OleDbPermissionAttribute</a></td>
+<td align="left">将某安全操作与自定义安全特性相关联。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbrowupdatedeventargs?view=dotnet-plat-ext-3.1">OleDbRowUpdatedEventArgs</a></td>
+<td align="left">为 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbdataadapter.rowupdated?view=dotnet-plat-ext-3.1">RowUpdated</a> 事件提供数据。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbrowupdatingeventargs?view=dotnet-plat-ext-3.1">OleDbRowUpdatingEventArgs</a></td>
+<td align="left">为 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbdataadapter.rowupdating?view=dotnet-plat-ext-3.1">RowUpdating</a> 事件提供数据。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbschemaguid?view=dotnet-plat-ext-3.1">OleDbSchemaGuid</a></td>
+<td align="left">返回由 [GetOleDbSchemaTable(Guid, Object<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbconnection.getoledbschematable?view=dotnet-plat-ext-3.1#System_Data_OleDb_OleDbConnection_GetOleDbSchemaTable_System_Guid_System_Object___">])</a> 方法指定的架构表类型。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbtransaction?view=dotnet-plat-ext-3.1">OleDbTransaction</a></td>
+<td align="left">表示要在数据源进行的 SQL 事务。 此类不能被继承。</td>
+</tr>
+</tbody></table>
+<p>&emsp;&emsp;我们主要使用<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbconnection?view=dotnet-plat-ext-3.1">OleDbConnection</a>类与<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.data.oledb.oledbcommand?view=dotnet-plat-ext-3.1">OleDbCommand</a>类</p>
+<h3 id="2-3-新建SQLHelper-cs类用来调用Access数据库"><a href="#2-3-新建SQLHelper-cs类用来调用Access数据库" class="headerlink" title="2.3 新建SQLHelper.cs类用来调用Access数据库"></a>2.3 新建SQLHelper.cs类用来调用Access数据库</h3><p>&emsp;&emsp;在SQLHelper.cs类中添加以下方法：</p>
+<pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">public static int CommandSQL(string SQL)
+&#123;  &#x2F;&#x2F;建立连接
+   using (OleDbConnection objConnection &#x3D; new OleDbConnection(ConnectionString))
+   &#123;&#x2F;&#x2F;打开连接
+   	   objConnection.Open();
+   using (OleDbCommand cmd&#x3D;new OleDbCommand())
+   &#123;&#x2F;&#x2F;执行增删改查命令
+       cmd.Connection&#x3D;objConnection;
+       cmd.CommandText&#x3D;SQL;
+       int count&#x3D;cmd.ExecuteNonQuery();
+   &#x2F;*OleDbCommand.ExecuteNonQuery();
+   * 对于 UPDATE、INSERT 和 DELETE 语句，返回值为该命令所影响的行数。
+   *  对于其他所有类型的语句，返回值为 -1。
+   *&#x2F;            	
+    &#x2F;&#x2F;返回执行结果
+       return count;
+         &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-批量使用SQL语句定义Access中字段类型"><a href="#3-批量使用SQL语句定义Access中字段类型" class="headerlink" title="3. 批量使用SQL语句定义Access中字段类型"></a>3. 批量使用SQL语句定义Access中字段类型</h2><h3 id="3-1-SQL语句改变字段类型"><a href="#3-1-SQL语句改变字段类型" class="headerlink" title="3.1 SQL语句改变字段类型"></a>3.1 SQL语句改变字段类型</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">Alter</span> <span class="token keyword">TABLE</span> 表名称 <span class="token keyword">Alter</span> <span class="token keyword">COLUMN</span> 字段名称 Byte <span class="token comment">//数字[字节]</span>
+<span class="token keyword">Alter</span> <span class="token keyword">TABLE</span> 表名称 <span class="token keyword">Alter</span> <span class="token keyword">COLUMN</span> 字段名称 Long <span class="token comment">//数字[长整型]</span>
+<span class="token keyword">Alter</span> <span class="token keyword">TABLE</span> 表名称 <span class="token keyword">Alter</span> <span class="token keyword">COLUMN</span> 字段名称 Short <span class="token comment">//数字[整型]</span>
+<span class="token keyword">Alter</span> <span class="token keyword">TABLE</span> 表名称 <span class="token keyword">Alter</span> <span class="token keyword">COLUMN</span> 字段名称 Single <span class="token comment">//数字[单精度</span>
+<span class="token keyword">Alter</span> <span class="token keyword">TABLE</span> 表名称 <span class="token keyword">Alter</span> <span class="token keyword">COLUMN</span> 字段名称 <span class="token keyword">Double</span> <span class="token comment">//数字[双精度]</span>
+<span class="token keyword">Alter</span> <span class="token keyword">TABLE</span> 表名称 <span class="token keyword">Alter</span> <span class="token keyword">COLUMN</span> 字段名称 Currency <span class="token comment">//货币</span>
+<span class="token keyword">Alter</span> <span class="token keyword">TABLE</span> 表名称 <span class="token keyword">Alter</span> <span class="token keyword">COLUMN</span> 字段名称 <span class="token keyword">Char</span> <span class="token comment">//文本</span>
+<span class="token keyword">Alter</span> <span class="token keyword">TABLE</span> 表名称 <span class="token keyword">Alter</span> <span class="token keyword">COLUMN</span> 字段名称 <span class="token keyword">Text</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token comment">//文本，其中n表示字段大小</span>
+<span class="token keyword">Alter</span> <span class="token keyword">TABLE</span> 表名称 <span class="token keyword">Alter</span> <span class="token keyword">COLUMN</span> 字段名称 <span class="token keyword">Binary</span> <span class="token comment">//二进制</span>
+<span class="token keyword">Alter</span> <span class="token keyword">TABLE</span> 表名称 <span class="token keyword">Alter</span> <span class="token keyword">COLUMN</span> 字段名称 Counter <span class="token comment">//自动编号</span>
+<span class="token keyword">Alter</span> <span class="token keyword">TABLE</span> 表名称 <span class="token keyword">Alter</span> <span class="token keyword">COLUMN</span> 字段名称 Memo <span class="token comment">//备注</span>
+<span class="token keyword">Alter</span> <span class="token keyword">TABLE</span> 表名称 <span class="token keyword">Alter</span> <span class="token keyword">COLUMN</span> 字段名称 <span class="token keyword">Time</span> <span class="token comment">//日期/时间</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-2-定义-DefineFields-方法"><a href="#3-2-定义-DefineFields-方法" class="headerlink" title="3.2 定义**DefineFields()**方法"></a>3.2 定义**DefineFields()**方法</h3><blockquote>
+<p>需要自己定义的字段类型及长度</p>
+</blockquote>
+<pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">JSYDSYQ&#x3D;new string[,]&#123;&#123;&quot;YSDM&quot;,&quot;TEXT&quot;,&quot;10&quot;&#125;,&#123;&quot;ZDDM&quot;,&quot;TEXT&quot;,&quot;19&quot;&#125;,
+				&#123;&quot;BDCDYH&quot;,&quot;TEXT&quot;,&quot;28&quot;&#125;,&#123;&quot;YWH&quot;,&quot;TEXT&quot;,&quot;20&quot;&#125;,
+				&#123;&quot;QLLX&quot;,&quot;TEXT&quot;,&quot;2&quot;&#125;,&#123;&quot;DJLX&quot;,&quot;TEXT&quot;,&quot;6&quot;&#125;,
+				&#123;&quot;DJYY&quot;,&quot;TEXT&quot;,&quot;200&quot;&#125;,&#123;&quot;SYQMJ&quot;,&quot;double&quot;,&quot;2&quot;&#125;,
+				&#123;&quot;SYQQSSJ&quot;,&quot;DateTime&quot;,&quot;0&quot;&#125;,&#123;&quot;SYQJSSJ&quot;,&quot;DateTime&quot;,&quot;0&quot;&#125;,
+				&#123;&quot;QDJG&quot;,&quot;double&quot;,&quot;0&quot;&#125;,&#123;&quot;BDCQZH&quot;,&quot;TEXT&quot;,&quot;255&quot;&#125;,
+				&#123;&quot;QXDM&quot;,&quot;TEXT&quot;,&quot;6&quot;&#125;,&#123;&quot;DJJG&quot;,&quot;TEXT&quot;,&quot;200&quot;&#125;,
+				&#123;&quot;DBR&quot;,&quot;TEXT&quot;,&quot;50&quot;&#125;,&#123;&quot;DJSJ&quot;,&quot;DateTime&quot;,&quot;0&quot;&#125;,
+				&#123;&quot;FJ&quot;,&quot;TEXT&quot;,&quot;255&quot;&#125;,&#123;&quot;QSZT&quot;,&quot;TEXT&quot;,&quot;2&quot;&#125;&#125;;
+&#x2F;&#x2F;多维数组<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">public static void DefineFields(string [,] array,string tableName)&#123;
+	int i&#x3D;0;
+	string sql&#x3D;&quot;&quot;;
+	while(i &lt; array.GetLength(0))&#123;
+		switch(array[i,1])&#123;
+			case &quot;TEXT&quot;:
+				sql&#x3D;String.Format(@&quot;Alter TABLE &#123;0&#125;  Alter COLUMN &#123;1&#125; Text(&#123;2&#125;)&quot;,tableName,array[i,0],array[i,2]);
+	           	int count&#x3D;SQLHelper.CommandSQL(sql);
+	           	if (count!&#x3D;-1)
+           			Print(&quot;定义字段:&quot;+array[i,0]+&quot;成功；长度为：&quot;+array[i,2]);
+			break;
+			case &quot;DateTime&quot;:
+				sql&#x3D;String.Format(@&quot;Alter TABLE &#123;0&#125;  Alter COLUMN &#123;1&#125; DateTime&quot;,tableName,array[i,0]);
+           		int count1&#x3D;SQLHelper.CommandSQL(sql);
+           		if (count1!&#x3D;-1)
+           			Print(&quot;定义字段:&quot;+array[i,0]+&quot;成功；类型为：&quot;+array[i,1]);          	
+			break;
+			case &quot;double&quot;:
+				sql&#x3D;String.Format(@&quot;Alter TABLE &#123;0&#125;  Alter COLUMN &#123;1&#125; double&quot;,tableName,array[i,0]);
+           		int count2&#x3D;SQLHelper.CommandSQL(sql);
+           		if (count2!&#x3D;-1)
+           			Print(&quot;定义字段:&quot;+array[i,0]+&quot;成功；类型为：&quot;+array[i,1]);
+			break;
+			default:
+				sql&#x3D;String.Format(@&quot;Alter TABLE &#123;0&#125;  Alter COLUMN &#123;1&#125; long&quot;,tableName,array[i,0]);
+           		int count3&#x3D;SQLHelper.CommandSQL(sql);
+           		if (count3!&#x3D;-1)
+           			Print(&quot;定义字段:&quot;+array[i,0]+&quot;成功；类型为：&quot;+array[i,1]);
+			break;
+				&#125;
+				i++;
+           &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="4-ConnectAccess程序源码与程序结构"><a href="#4-ConnectAccess程序源码与程序结构" class="headerlink" title="4. ConnectAccess程序源码与程序结构"></a>4. ConnectAccess程序源码与程序结构</h2><h3 id="4-1-程序结构"><a href="#4-1-程序结构" class="headerlink" title="4.1 程序结构"></a>4.1 程序结构</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">│  ConnectAccess.sln
+│  
+└─ConnectAccess
+    │  app.config
+    │  ConnectAccess.csproj
+    │  MainForm.cs
+    │  MainForm.Designer.cs
+    │  MainForm.resx
+    │  Program.cs
+    │  SQLHelper.cs
+    │  
+    ├─bin
+    │  └─Debug
+    │          ConnectAccess.exe
+    │          ConnectAccess.exe.config
+    │          ConnectAccess.pdb
+    │          ConnectAccess.vshost.exe
+    │          ConnectAccess.vshost.exe.config
+    │          ConnectAccess.vshost.exe.manifest
+    │          
+    ├─obj
+    │  └─Debug
+    │      │  ConnectAccess.csproj.FileListAbsolute.txt
+    │      │  ConnectAccess.csprojResolveAssemblyReference.cache
+    │      │  ConnectAccess.exe
+    │      │  ConnectAccess.pdb
+    │      │  DesignTimeResolveAssemblyReferencesInput.cache
+    │      │  
+    │      └─TempPE
+    └─Properties
+            AssemblyInfo.cs<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-2-使用说明"><a href="#4-2-使用说明" class="headerlink" title="4.2 使用说明"></a>4.2 使用说明</h3><p>&emsp;&emsp;可以在配置文件<font color='red'>app.config</font>中增加需要改变的字段数据。</p>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>startup</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>supportedRuntime</span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>v4.0<span class="token punctuation">"</span></span> <span class="token attr-name">sku</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>.NETFramework,Version=v4.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>startup</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appSettings</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>add</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>SQLConnString<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Provider=Microsoft.Jet.OleDb.4.0;Data Source=//DESKTOP-KM4H7JL//access//130431SXB.mdb<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>add</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>QXDM<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>131124<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>appSettings</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-3-源码地址"><a href="#4-3-源码地址" class="headerlink" title="4.3 源码地址"></a>4.3 源码地址</h3><p><a target="_blank" rel="noopener" href="https://gitee.com/mrwhitebare/daily-garbage-applet">传送门</a></p>
+<h2 id="欢迎大家积极评论"><a href="#欢迎大家积极评论" class="headerlink" title="欢迎大家积极评论"></a>欢迎大家积极评论</h2>
             </div>
             <hr/>
 
@@ -743,7 +1007,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://MrWhitebare.github.io/2020/0917undefined.html">https://MrWhitebare.github.io/2020/0917undefined.html</a>
+                    <a href="https://MrWhitebare.github.io/2020/0926undefined.html">https://MrWhitebare.github.io/2020/0926undefined.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -785,8 +1049,12 @@
                                     <span class="chip bg-color">C#</span>
                                 </a>
                             
-                                <a href="/tags/using/">
-                                    <span class="chip bg-color">using</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
+                                </a>
+                            
+                                <a href="/tags/Access/">
+                                    <span class="chip bg-color">Access</span>
                                 </a>
                             
                         </div>
@@ -957,7 +1225,7 @@
         repo: 'MrWhitebare.github.io',
         owner: 'MrWhitebare',
         admin: "MrWhitebare",
-        id: '2020-09-17T00-00-00',
+        id: '2020-09-26T16-50-30',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -979,8 +1247,8 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://mrwhitebare.github.io/2020/0917undefined.html';
-        this.page.identifier = '/2020/0917undefined.html';
+        this.page.url = 'https://mrwhitebare.github.io/2020/0926undefined.html';
+        this.page.identifier = '/2020/0926undefined.html';
         this.page.title = 'C# using关键字用法';
     };
     let disqus_shortname = '';
@@ -1275,7 +1543,7 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/0917undefined.html">
+                <a href="/2020/0926undefined.html">
                     <div class="card-image">
                         
                         
@@ -1287,12 +1555,12 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 创建命名空间别名
+                            描述C# using关键字的用法，如何使用Data.OleDb程序集，批量使用SQL语句定义字段类型。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-26
                             </span>
                         <span class="publish-author">
                             
@@ -1314,8 +1582,12 @@
                         <span class="chip bg-color">C#</span>
                     </a>
                     
-                    <a href="/tags/using/">
-                        <span class="chip bg-color">using</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                    <a href="/tags/Access/">
+                        <span class="chip bg-color">Access</span>
                     </a>
                     
                 </div>
@@ -1572,7 +1844,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.2k</span>&nbsp;字
+                class="white-color">6.3k</span>&nbsp;字
             
             
             
